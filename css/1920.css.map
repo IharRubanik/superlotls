@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACb;;AACD,AAAA,UAAU,CAAC;EACT,KAAK,EAAE,MAAM;EACb,MAAM,EAAE,MAAM;CACf",
+    "sources": [
+        "1920.scss"
+    ],
+    "names": [],
+    "file": "1920.css"
+}
