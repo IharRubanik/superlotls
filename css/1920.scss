@@ -35,10 +35,13 @@
   padding: 22px 20px;
   justify-content: center;
   text-transform: uppercase;
+  text-decoration: none;
   background: #fff;
+  color: #07031F;
   position: relative;
   border-radius: 8px;
   border: none;
+  overflow: hidden;
   &::before,
   &::after {
     content: '';
@@ -100,10 +103,23 @@
   }
 }
 
+.waterway-maintitle {
+  font-size: 24px;
+  line-height: calc(35.5/24);
+  font-family: 'Oswald';
+  font-weight: 300;
+  padding: 6px 16px 10px;
+  border-width: 0px 1px;
+  border-style: solid;
+  border-color: #FF4CBD;
+  border-radius: 8px;
+  color: #fff;
+}
+
 .waterway {
   background: #333;
-  height: 5000px;
-  border: 1px solid red;
+  height: 4000px;
+  position: relative;
   .container {
     display: flex;
     justify-content: space-between;
@@ -113,36 +129,309 @@
     padding: 134px 0;
   }
   .waterway-tabs {
-    width: 404px;
+    width: 450px;
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
+    align-items: flex-start;
+    gap: 40px;
     a {
-      font-size: 30px;
+      font-size: 32px;
+      line-height: 1;
+      font-family: 'Wild World';
+      font-weight: 500;
       color: #fff;
       text-decoration: none;
+      opacity: 0.3;
+      transition: 1s font-size;
       &.active {
-        color: red;
+        font-size: 68px;
+        opacity: 1;
       }
     }
   }
   .waterway-texts {
     width: 440px;
-    height: 640px;
-    border: 1px solid blue;
+    height: 695px;
     overflow-y: hidden;
+    color: #fff;
     // overflow-y: scroll;
+    .text-accent {
+      color: #FF4CBD;
+    }
+    .waterway-title {
+      font-size: 54px;
+      line-height: calc(64/54);
+      font-family: 'Oswald';
+      font-weight: 700;
+      margin: 0 0 15px 0;
+    }
+    p {
+      display: block;
+      font-size: 30px;
+      line-height: calc(40/30);
+      font-family: 'Oswald';
+      font-weight: 400;
+      color: #fff;
+      margin: 0 0 30px 0;
+    }
+    ul {
+      margin: 0 0 52px 0;
+      li {
+        font-size: 24px;
+        line-height: calc(44/24);
+        font-family: 'Oswald';
+        font-weight: 300;
+        opacity: .6;
+        padding: 0 0 0 35px;
+        position: relative;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 20px;
+          left: 14px;
+          width: 4px;
+          height: 4px;
+          border-radius: 50vw;
+          background: #fff;
+        }
+      }
+    }
+    a {
+      color: #FF4CBD;
+      text-decoration: none;
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -5px;
+        width: calc(100% + 10px);
+        height: 100%;
+        border: 1px solid #FF4CBD;
+        border-radius: 10px;
+        opacity: .5;
+      }
+    }
   }
-  #waterway-text-1 {
-    background: coral
+  // #waterway-text-1 {
+  //   background: coral
+  // }
+  // #waterway-text-2 {
+  //   background: steelblue
+  // }
+  // #waterway-text-3 {
+  //   background: lightgreen
+  // }
+  // #waterway-text-4 {
+  //   background: lightseagreen
+  // }
+
+  .absolute-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    > div {
+      &:nth-child(1) {
+        background: rgba(255,0,0,.2);
+        height: 25%;
+        width: 100%;
+      }
+      &:nth-child(2) {
+        background: rgba(255,255,0,.2);
+        height: 25%;
+        width: 100%;
+      }
+      &:nth-child(3) {
+        background: rgba(255,0,255,.2);
+        height: 25%;
+        width: 100%;
+      }
+      &:nth-child(4) {
+        background: rgba(255,255,255,.2);
+        height: 25%;
+        width: 100%;
+      }
+    }
   }
-  #waterway-text-2 {
-    background: steelblue
+}
+
+.accordion-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #fff;
+  font-family: 'Oswald';
+  font-weight: 300;
+}
+
+.accordion-item {
+  width: 660px;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  user-select: none;
+  overflow: hidden;
+  max-height: 70px;
+  transition: .3s max-height;
+  &.show {
+    max-height: 300px;
   }
-  #waterway-text-3 {
-    background: lightgreen
+}
+
+.accordion-title {
+  font-size: 26px;
+  line-height: calc(36/26);
+  padding: 7px 0 24px 45px;
+  position: relative;
+  transition: .3s color;
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(50% - 8px);
+    left: 18px;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    transition: .3s height, .3s background-color;
   }
-  #waterway-text-4 {
-    background: lightseagreen
+  &:before {
+    width: 2px;
+    height: 16px;
+  }
+  &:after {
+    width: 16px;
+    height: 2px;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  &.show {
+    color: #FF4CBD;
+    &:before,
+    &:after {
+      background-color: #FF4CBD;
+    }
+    &:before {
+      height: 0;
+    }
+  }
+}
+
+.accordion-content {
+  font-size: 22px;
+  line-height: calc(32/22);
+  padding: 7px 0 29px 45px;
+  opacity: 0.6;
+}
+
+footer {
+  background-color: #235EC0;
+  // background: url('/img/footer-bg.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 1920px auto;
+  padding: 250px 0 88px 0;
+  height: 200vh;
+  .faq {
+    margin: 0 0 298px 0;
+    .main-title {
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 0 50px 0;
+    }
+  }
+}
+
+.footer {
+  line-height: 1;
+  font-family: 'Wild World';
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  padding: 318px 0 0 0;
+  .f-main-title {
+    position: absolute;
+    font-size: 102px;
+    top: 0;
+    &:nth-child(1) {
+      text-transform: uppercase;
+    }
+    &:nth-child(2) {
+      text-transform: uppercase;
+      right: 0;
+    }
+    &:nth-child(3) {
+      font-size: 140px;
+      font-family: 'Oswald';
+      line-height: calc(207/140);
+      color: #FF4CBD;
+      top: 62px;
+      right: 0;
+    }
+  }
+  > img {
+    position: absolute;
+    top: 130px;
+    left: 200px;
+  }
+  .socials {
+    display: flex;
+    gap: 40px;
+    margin: 0 0 80px 0;
+    .btn {
+      width: 100%;
+      font-size: 28px;
+      line-height: calc(41.5/28);
+      padding: 29px 20px;
+      img {
+        display: block;
+        width: 30px;
+        height: auto;
+        margin: 0 14px;
+      }
+      &:before {
+        left: -40px;
+      }
+      &:after {
+        right: -40px;
+      }
+    }
+  }
+  .terms {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 0 40px 0;
+    a {
+      font-size: 16px;
+      line-height: calc(24/16);
+      letter-spacing: 0.15em;
+      font-family: 'Oswald';
+      text-transform: uppercase;
+      color: #fff;
+      opacity: .6;
+      text-decoration: none;
+    }
+  }
+  .powered {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    a {
+      img {
+        width: 150px;
+        height: auto;
+      }
+    }
   }
 }
