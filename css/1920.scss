@@ -49,6 +49,18 @@
     left: 50%;
   }
 }
+  @keyframes bubbles1 {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.4;
+    }
+    100% {
+      top: -10%;
+      opacity: 0.4;
+    }
+  }
 
 * {
   box-sizing: border-box;
@@ -379,18 +391,7 @@
       animation: 1.5s bubbles1 linear;
     }
   }
-  @keyframes bubbles1 {
-    0% {
-      opacity: 0;
-    }
-    10% {
-      opacity: 0.4;
-    }
-    100% {
-      top: -10%;
-      opacity: 0.4;
-    }
-  }
+
   .bubbles2 {
     position: absolute;
     opacity: 0;
@@ -748,9 +749,10 @@
             img {
               opacity: 0;
             }
+            border: 1px solid #ffffff00;
             &:not([disabled]):hover {
               background: none;
-              border: 1px solid #ffffff;
+              border: 1px solid #ffffff00;
               cursor: auto;
             }
           }

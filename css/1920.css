@@ -124,6 +124,32 @@
   }
 }
 
+@-webkit-keyframes bubbles1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  100% {
+    top: -10%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes bubbles1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
+  }
+  100% {
+    top: -10%;
+    opacity: 0.4;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -568,32 +594,6 @@
 .beginning .bubbles1.active {
   -webkit-animation: 1.5s bubbles1 linear;
           animation: 1.5s bubbles1 linear;
-}
-
-@-webkit-keyframes bubbles1 {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.4;
-  }
-  100% {
-    top: -10%;
-    opacity: 0.4;
-  }
-}
-
-@keyframes bubbles1 {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.4;
-  }
-  100% {
-    top: -10%;
-    opacity: 0.4;
-  }
 }
 
 .beginning .bubbles2 {
@@ -1053,13 +1053,17 @@
   transition: all 0.3s;
 }
 
+.team .team__container .ridht-block .button-container .button.active {
+  border: 1px solid #ffffff00;
+}
+
 .team .team__container .ridht-block .button-container .button.active img {
   opacity: 0;
 }
 
 .team .team__container .ridht-block .button-container .button.active:not([disabled]):hover {
   background: none;
-  border: 1px solid #ffffff;
+  border: 1px solid #ffffff00;
   cursor: auto;
 }
 
