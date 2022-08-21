@@ -42,6 +42,7 @@
   border-radius: 8px;
   border: none;
   overflow: hidden;
+  transition: .3s background-color, .3s color;
   &::before,
   &::after {
     content: '';
@@ -62,14 +63,41 @@
   &::after {
     right: 0;
   }
+  &:hover {
+    background-color: #FF4CBD;
+    color: #fff;
+    img {
+      filter: hue-rotate(100deg);
+    }
+  }
 }
 
-.mint {
+#mintwaterway {
+  width: 100vw;
+  height: 900vh;
+  display: flex;
+  position: relative;
+  background: #555;
+  #mint-waterway-wrap {
+    display: flex;
+    width: 200vw;
+    transition: 1s transform;
+    &.active {
+      transform: translateX(-100vw)
+    }
+  }
+}
+
+#mint {
   background-color: #03010D;
+  position: sticky;
+  top: 0;
+  left: 0;
+  flex: none;
+  width: 100vw;
   height: 100vh;
   padding: 207px 0 223px 0;
   overflow: hidden;
-  position: relative;
   .container {
     position: relative;
     z-index: 1;
@@ -114,21 +142,87 @@
   border-color: #FF4CBD;
   border-radius: 8px;
   color: #fff;
+  margin: 15px 0 -15px 0;
 }
 
-.waterway {
-  background: #333;
-  height: 4000px;
-  position: relative;
+#waterway {
+  background: url('/img/waterway-bg.png');
+  background-size: auto 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  // background-position: 0 0;
+  flex: none;
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  // background: #333;
+  transition: 1s background-size, 1s background-position;
+  .waterway-buble {
+    width: 317px;
+    height: auto;
+    position: absolute;
+    top: 70px;
+    left: 360px;
+    transition: 1s transform;
+    z-index: -1;
+  }
+  &.first {
+    background-size: auto 100vh;
+    background-position: 0 0;
+    .waterway-buble {
+      transform: scale(1) translate(0,0);
+      top: 70px;
+      left: 360px;
+    }
+  }
+  &.second {
+    background-size: auto 130vh;
+    background-position: -850px 0px;
+    .waterway-buble {
+      transform: scale(1.25) translate(38px,58px);
+    }
+  }
+  &.third {
+    background-size: auto 100vh;
+    background-position: -1060px 0px;
+    .waterway-buble {
+      transform: scale(1.6) translate(56px, 70px);
+    }
+  }
+  &.four {
+    background-size: auto 105vh;
+    background-position: -1920px -5vh;
+    .waterway-buble {
+      transform: scale(1.95) translate(46px, 87px)
+    }
+  }
   .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    position: sticky;
-    top: 0;
-    padding: 134px 0;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: url('/img/waterway-fade.svg');
+      background-size: 2950px auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 2950px;
+      height: 447px;
+      bottom: -224px;
+      left: 50%;
+      transform: translate(-50%,0);
+      display: none;
+    }
+    // padding: 134px 0;
   }
   .waterway-tabs {
+    margin: 134px 0 0 0;
     width: 450px;
     display: flex;
     flex-direction: column;
@@ -151,12 +245,19 @@
   }
   .waterway-texts {
     width: 440px;
-    height: 695px;
+    height: 100vh;
     overflow-y: hidden;
     color: #fff;
     // overflow-y: scroll;
     .text-accent {
       color: #FF4CBD;
+    }
+    #waterway-text-1,
+    #waterway-text-2,
+    #waterway-text-3,
+    #waterway-text-4 {
+      height: 100vh;
+      padding: 134px 0 0 0;
     }
     .waterway-title {
       font-size: 54px;
@@ -215,48 +316,7 @@
       }
     }
   }
-  // #waterway-text-1 {
-  //   background: coral
-  // }
-  // #waterway-text-2 {
-  //   background: steelblue
-  // }
-  // #waterway-text-3 {
-  //   background: lightgreen
-  // }
-  // #waterway-text-4 {
-  //   background: lightseagreen
-  // }
 
-  .absolute-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    > div {
-      &:nth-child(1) {
-        background: rgba(255,0,0,.2);
-        height: 25%;
-        width: 100%;
-      }
-      &:nth-child(2) {
-        background: rgba(255,255,0,.2);
-        height: 25%;
-        width: 100%;
-      }
-      &:nth-child(3) {
-        background: rgba(255,0,255,.2);
-        height: 25%;
-        width: 100%;
-      }
-      &:nth-child(4) {
-        background: rgba(255,255,255,.2);
-        height: 25%;
-        width: 100%;
-      }
-    }
-  }
 }
 
 .accordion-wrap {
@@ -280,7 +340,10 @@
   user-select: none;
   overflow: hidden;
   max-height: 70px;
-  transition: .3s max-height;
+  transition: .3s max-height, .3s border-color;
+  &:hover {
+    border-color: #FF4CBD;
+  }
   &.show {
     max-height: 300px;
   }

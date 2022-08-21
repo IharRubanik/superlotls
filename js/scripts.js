@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   // Waterway 
-  const waterwaySection = document.querySelector('section.waterway'),
+  const mintWaterwayWrap = document.querySelector('#mint-waterway-wrap'),
+        mintWaterwaySection = document.querySelector('#mintwaterway'),
+        waterwaySection = document.querySelector('#waterway'),
         waterwayTabs = document.querySelectorAll('.waterway-tabs a'),
         waterwayText = document.querySelector('.waterway-texts'),
         waterwayTab = document.querySelectorAll('.waterway-tab');
@@ -18,20 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
 
-    // x = (i === 0) ? 0 :
-    //     (i === 1) ? 16 :
-    //     (i === 2) ? 32 :
-    //     (i === 3) ? 48 : 48;
+    x = (i === 0) ? 20 :
+        (i === 1) ? 34 :
+        (i === 2) ? 50 :
+        (i === 3) ? 68 : 84;
 
-    // console.log('x: ',x)
-
-    // window.scrollTo({
-    //   top: waterwaySection.offsetTop + waterwaySection.clientHeight/100 * x,
-    // })
-
-    // window.scrollTo({
-    //   top: 10
-    // });
+    window.scrollTo({
+      top: (mintWaterwaySection.offsetTop + mintWaterwaySection.clientHeight/100 * x) - 4,
+    })
 
     waterwayText.scrollTo({
       top: range,
@@ -43,15 +39,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener('scroll', function() {
 
-    percentScrolled = (-1 * waterwaySection.getBoundingClientRect().y/ (waterwaySection.clientHeight/100));
+    percentScrolled = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
 
-    num = (percentScrolled < 16) ? 0 :
-          (percentScrolled < 32) ? 1 :
-          (percentScrolled < 48) ? 2 :
-          (percentScrolled < 64) ? 3 : 3;
+    console.log(percentScrolled)
 
-    console.log('num: ', num)
+    if (percentScrolled > 10) {
+      mintWaterwayWrap.classList.add('active');
+    } else {
+      mintWaterwayWrap.classList.remove('active');
+    }
+
+    num = (percentScrolled <= 20) ? 0 :
+          (percentScrolled < 36) ? 1 :
+          (percentScrolled < 52) ? 2 :
+          (percentScrolled < 68) ? 3 :
+          (percentScrolled < 84) ? 3 : 3;
     
+    if (num === 0) {
+      waterwaySection.classList = '';
+      waterwaySection.classList.add('first');
+    }
+    if (num === 1) {
+      waterwaySection.classList = '';
+      waterwaySection.classList.add('second');
+    }
+    if (num === 2) {
+      waterwaySection.classList = '';
+      waterwaySection.classList.add('third');
+    }
+    if (num === 3) {
+      waterwaySection.classList = '';
+      waterwaySection.classList.add('four');
+    }
+
     if (num !== numOld) {
       numOld = num;
       waterwayTabs[num].click();
@@ -60,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
 
+  // Accordion
   const accordionItem = document.querySelectorAll('.accordion-item'),
         accordionTitle = document.querySelectorAll('.accordion-title'),
         accordionContent = document.querySelectorAll('.accordion-content');
