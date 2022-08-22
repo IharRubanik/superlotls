@@ -1255,31 +1255,31 @@ footer {
   flex-direction: column;
   justify-content: end;
   padding: 0 0 88px 0;
-  .f-main-title {
-    position: absolute;
-    font-size: 102px;
-    top: 100px;
-    &:nth-child(1) {
+  .join-top,
+  .join-bot {
+    display: flex;
+    justify-content: space-between;
+  }
+  .join-top {
+    > span {
       text-transform: uppercase;
     }
-    &:nth-child(2) {
-      text-transform: uppercase;
-      right: 0;
-    }
-    &:nth-child(3) {
+  }
+  .join-bot {
+    > span {
       font-size: 140px;
       font-family: 'Oswald';
       line-height: calc(207/140);
       color: #FF4CBD;
-      top: 180px;
-      right: 0;
+    }
+    > img {
+      margin: 0 0 0 205px;
     }
   }
-  > img {
-    position: absolute;
-    top: 247px;
-    left: 200px;
+  .f-main-title {
+    font-size: 102px;
   }
+
   .socials {
     display: flex;
     gap: 40px;

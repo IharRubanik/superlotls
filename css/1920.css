@@ -1679,34 +1679,33 @@ footer .faq .main-title {
   padding: 0 0 88px 0;
 }
 
-.footer .f-main-title {
-  position: absolute;
-  font-size: 102px;
-  top: 100px;
+.footer .join-top,
+.footer .join-bot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.footer .f-main-title:nth-child(1) {
+.footer .join-top > span {
   text-transform: uppercase;
 }
 
-.footer .f-main-title:nth-child(2) {
-  text-transform: uppercase;
-  right: 0;
-}
-
-.footer .f-main-title:nth-child(3) {
+.footer .join-bot > span {
   font-size: 140px;
   font-family: 'Oswald';
   line-height: calc(207/140);
   color: #FF4CBD;
-  top: 180px;
-  right: 0;
 }
 
-.footer > img {
-  position: absolute;
-  top: 247px;
-  left: 200px;
+.footer .join-bot > img {
+  margin: 0 0 0 205px;
+}
+
+.footer .f-main-title {
+  font-size: 102px;
 }
 
 .footer .socials {
