@@ -1254,6 +1254,7 @@
   height: 100vh;
   padding: 207px 0 223px 0;
   overflow: hidden;
+  z-index: 9;
 }
 
 #mint .container {
@@ -1267,16 +1268,16 @@
 }
 
 #mint img.bg {
-  top: 0;
-  left: 412px;
+  top: -210px;
+  left: 153px;
   width: 1076px;
   height: auto;
-  z-index: 0;
+  z-index: -1;
 }
 
 #mint img.crocodile {
-  top: 85px;
-  right: 153px;
+  top: -125px;
+  right: -105px;
 }
 
 #mint .main-title {
@@ -1309,10 +1310,7 @@
 }
 
 #waterway {
-  background: url("/img/waterway-bg.jpg");
-  background-size: auto 100vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: none;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1324,6 +1322,19 @@
   left: 0;
   -webkit-transition: 1s background-size, 1s background-position;
   transition: 1s background-size, 1s background-position;
+}
+
+#waterway #waterway-bg {
+  position: absolute;
+  left: -110px;
+  top: 0;
+  z-index: -1;
+  width: 3870px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: .3s width, .3s left, .3s top;
+  transition: .3s width, .3s left, .3s top;
 }
 
 #waterway .waterway-buble {
@@ -1339,9 +1350,8 @@
   z-index: -1;
 }
 
-#waterway.first {
-  background-size: auto 114vh;
-  background-position: 0px -60px;
+#waterway.first #waterway-bg {
+  width: 3430px;
 }
 
 #waterway.first .waterway-buble {
@@ -1351,9 +1361,10 @@
   left: 620px;
 }
 
-#waterway.second {
-  background-size: auto 159vh;
-  background-position: -870px 0px;
+#waterway.second #waterway-bg {
+  width: 3900px;
+  top: 0;
+  left: -110px;
 }
 
 #waterway.second .waterway-buble {
@@ -1361,9 +1372,10 @@
           transform: scale(1.25) translate(38px, 58px);
 }
 
-#waterway.third {
-  background-size: auto 123vh;
-  background-position: -1010px 0;
+#waterway.third #waterway-bg {
+  width: 5870px;
+  top: 0;
+  left: -2110px;
 }
 
 #waterway.third .waterway-buble {
@@ -1371,9 +1383,10 @@
           transform: scale(1.6) translate(56px, 70px);
 }
 
-#waterway.four {
-  background-size: auto 139vh;
-  background-position: -2291px -190px;
+#waterway.four #waterway-bg {
+  width: 4870px;
+  top: 0;
+  left: -2750px;
 }
 
 #waterway.four .waterway-buble {

@@ -228,7 +228,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Waterway 
-  const mintWaterwayWrap = document.querySelector('#mint-waterway-wrap'),
+  const mintBtn = document.querySelector('#mint .btn'),
+        mintWaterwayWrap = document.querySelector('#mint-waterway-wrap'),
         mintWaterwaySection = document.querySelector('#mintwaterway'),
         waterwaySection = document.querySelector('#waterway'),
         waterwayTabs = document.querySelectorAll('.waterway-tabs a'),
@@ -238,6 +239,13 @@ document.addEventListener("DOMContentLoaded", function() {
   let percentScrolled = 0,
       num = 0,
       numOld = 0;
+
+  mintBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: mintWaterwaySection.offsetTop + mintWaterwaySection.clientHeight/100 + 1000,
+    })
+  })
 
   waterwayTabs.forEach((el,i) => el.addEventListener('click', function(e) {
     e.preventDefault();
