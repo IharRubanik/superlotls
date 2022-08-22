@@ -227,6 +227,13 @@ document.addEventListener("DOMContentLoaded", function() {
     showImages();
   }
 
+  // Beginning
+
+  const beginningSection = document.querySelector('#beginning'),
+        beginningBg      = document.querySelector('.beginning-background'),
+        fadeWrapper = document.querySelector('.fade-wrapper');
+  
+
   // Waterway 
   const mintBtn = document.querySelector('#mint .btn'),
         mintWaterwayWrap = document.querySelector('#mint-waterway-wrap'),
@@ -271,12 +278,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
   }))
 
-
   window.addEventListener('scroll', function() {
 
     percentScrolled = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
 
-    console.log(percentScrolled)
+    // percentScrolled2 = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
+    // if (percentScrolled2 > 0) {
+    //   beginningBg.style.transform = `scale(1.${Math.floor(percentScrolled2)})`;
+    //   let num = `0.${percentScrolled2}`;
+    //   let numz = Number(num);
+    //   let numz2 = 1 - numz
+    //   console.log(typeof(+num))
+    //   beginningSection.style.opacity = `${numz2}`
+    // } else {
+    //   beginningBg.style.transform = `scale(1)`
+    // }
+
+    // if (percentScrolled2 >= 72) {
+    //   beginningSection.classList.remove('active');
+    //   fadeWrapper.classList.add('active');
+    // } else {
+    //   beginningSection.classList.add('active');
+    //   fadeWrapper.classList.remove('active');
+    // }
+
+    // console.log(percentScrolled2)
+
+    // console.log(percentScrolled)
 
     if (percentScrolled > 10) {
       mintWaterwayWrap.classList.add('active');

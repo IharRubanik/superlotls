@@ -161,7 +161,6 @@
 .wrapper {
   width: 100%;
   height: auto;
-  overflow: clip;
   background-color: #0d4b9e;
 }
 
@@ -174,6 +173,7 @@
   height: 100vh;
   padding: 35px 50px;
   position: relative;
+  overflow: hidden;
 }
 
 .main .main__background {
@@ -562,15 +562,22 @@
 
 .beginning {
   position: relative;
-  height: 3000px;
+  height: 4000px;
   width: 100%;
+  z-index: 9;
 }
 
-.beginning .beginning-container {
+.beginning .beginning-wrapper {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.beginning .beginning-wrapper .beginning-container {
   width: 100%;
   height: 100vh;
   display: -webkit-box;
@@ -584,7 +591,7 @@
           justify-content: center;
 }
 
-.beginning .beginning-container .beginning-background {
+.beginning .beginning-wrapper .beginning-container .beginning-background {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -593,6 +600,8 @@
   left: 0;
   bottom: 0;
   z-index: 0;
+  -webkit-transition: .2s transform;
+  transition: .2s transform;
 }
 
 .beginning .bubbles1 {
@@ -857,6 +866,7 @@
   height: 100vh;
   background-color: #0d4b9e;
   padding: 200px 0 0 0;
+  overflow: hidden;
 }
 
 .team .team-background {
@@ -1228,38 +1238,44 @@
           filter: hue-rotate(100deg);
 }
 
+.fade-wrapper {
+  margin-top: -100vh;
+}
+
 #mintwaterway {
   width: 100vw;
-  height: 900vh;
+  height: 6000px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  background: #555;
 }
 
 #mintwaterway #mint-waterway-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 200vw;
+  width: 100%;
+  height: 100vh;
   -webkit-transition: 1s -webkit-transform;
   transition: 1s -webkit-transform;
   transition: 1s transform;
   transition: 1s transform, 1s -webkit-transform;
+  background: steelblue;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-#mintwaterway #mint-waterway-wrap.active {
+#mintwaterway #mint-waterway-wrap.active .mint-test {
   -webkit-transform: translateX(-100vw);
           transform: translateX(-100vw);
 }
 
 #mint {
   background-color: #03010d;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
@@ -1322,17 +1338,25 @@
   margin: 15px 0 -25px 0;
 }
 
+.mint-test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200vw;
+  -webkit-transition: 1s -webkit-transform;
+  transition: 1s -webkit-transform;
+  transition: 1s transform;
+  transition: 1s transform, 1s -webkit-transform;
+}
+
 #waterway {
   background: none;
+  position: relative;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
   width: 100vw;
   height: 100vh;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
   -webkit-transition: 1s background-size, 1s background-position;
   transition: 1s background-size, 1s background-position;
 }
@@ -1656,6 +1680,7 @@
 
 footer {
   position: relative;
+  overflow-x: hidden;
   height: auto;
 }
 
