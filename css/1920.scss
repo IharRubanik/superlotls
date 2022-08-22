@@ -68,6 +68,7 @@
   width: 100%;
   height: auto;
   overflow: clip;
+
 }
 .container {
   width: 1400px;
@@ -746,13 +747,14 @@
           background: none;
           transition: all 0.3s;
           &.active {
-            img {
-              opacity: 0;
-            }
-            border: 1px solid #ffffff00;
+            opacity: .2;
+            // img {
+            //   opacity: 0;
+            // }
+            border: 1px solid #ffffff;
             &:not([disabled]):hover {
               background: none;
-              border: 1px solid #ffffff00;
+              border: 1px solid #ffffff;
               cursor: auto;
             }
           }

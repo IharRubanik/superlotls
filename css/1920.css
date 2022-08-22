@@ -124,7 +124,6 @@
   }
 }
 
-<<<<<<< HEAD
 @-webkit-keyframes bubbles1 {
   0% {
     opacity: 0;
@@ -151,10 +150,7 @@
   }
 }
 
-* {
-=======
 *, *::before, *::after {
->>>>>>> 0f2bbcc0d29631a4823f06fd540599362f192b80
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-appearance: none;
@@ -1059,16 +1055,13 @@
 }
 
 .team .team__container .ridht-block .button-container .button.active {
-  border: 1px solid #ffffff00;
-}
-
-.team .team__container .ridht-block .button-container .button.active img {
-  opacity: 0;
+  opacity: .2;
+  border: 1px solid #ffffff;
 }
 
 .team .team__container .ridht-block .button-container .button.active:not([disabled]):hover {
   background: none;
-  border: 1px solid #ffffff00;
+  border: 1px solid #ffffff;
   cursor: auto;
 }
 
