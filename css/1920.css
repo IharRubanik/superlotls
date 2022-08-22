@@ -162,6 +162,7 @@
   width: 100%;
   height: auto;
   overflow: clip;
+  background-color: #0d4b9e;
 }
 
 .container {
@@ -561,6 +562,16 @@
 
 .beginning {
   position: relative;
+  height: 3000px;
+  width: 100%;
+}
+
+.beginning .beginning-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -573,7 +584,7 @@
           justify-content: center;
 }
 
-.beginning .beginning-background {
+.beginning .beginning-container .beginning-background {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -1335,8 +1346,8 @@
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transition: .3s width, .3s left, .3s top;
-  transition: .3s width, .3s left, .3s top;
+  -webkit-transition: 0.3s width, 0.3s left, 0.3s top;
+  transition: 0.3s width, 0.3s left, 0.3s top;
 }
 
 #waterway .waterway-buble {
@@ -1645,7 +1656,6 @@
 
 footer {
   position: relative;
-  background-color: #0d4b9e;
   height: auto;
 }
 
