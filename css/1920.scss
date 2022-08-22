@@ -970,18 +970,11 @@
 }
 
 #waterway {
-<<<<<<< HEAD
   background: none;
   // background: url('/img/waterway-bg.jpg');
   // background-size: auto 100vh;
   // background-attachment: fixed;
   // background-repeat: no-repeat;
-=======
-  background: url("/img/waterway-bg.jpg");
-  background-size: auto 100vh;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
->>>>>>> 6305f8fff8dfa2998824cb3de66c5632529d4e05
   // background-position: 0 0;
   flex: none;
   width: 100vw;
@@ -1022,16 +1015,11 @@
     }
   }
   &.second {
-<<<<<<< HEAD
     #waterway-bg {
       width: 3900px;
       top: 0;
       left: -110px;
     }
-=======
-    background-size: auto 159vh;
-    background-position: -870px 0px;
->>>>>>> 6305f8fff8dfa2998824cb3de66c5632529d4e05
     .waterway-buble {
       transform: scale(1.25) translate(38px, 58px);
     }
