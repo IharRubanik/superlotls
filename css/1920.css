@@ -1305,11 +1305,11 @@
   border-color: #FF4CBD;
   border-radius: 8px;
   color: #fff;
-  margin: 15px 0 -15px 0;
+  margin: 15px 0 -25px 0;
 }
 
 #waterway {
-  background: url("/img/waterway-bg.png");
+  background: url("/img/waterway-bg.jpg");
   background-size: auto 100vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -1331,7 +1331,7 @@
   height: auto;
   position: absolute;
   top: 70px;
-  left: 360px;
+  left: 620px;
   -webkit-transition: 1s -webkit-transform;
   transition: 1s -webkit-transform;
   transition: 1s transform;
@@ -1340,20 +1340,20 @@
 }
 
 #waterway.first {
-  background-size: auto 100vh;
-  background-position: 0 0;
+  background-size: auto 114vh;
+  background-position: 0px -60px;
 }
 
 #waterway.first .waterway-buble {
   -webkit-transform: scale(1) translate(0, 0);
           transform: scale(1) translate(0, 0);
   top: 70px;
-  left: 360px;
+  left: 620px;
 }
 
 #waterway.second {
-  background-size: auto 130vh;
-  background-position: -850px 0px;
+  background-size: auto 159vh;
+  background-position: -870px 0px;
 }
 
 #waterway.second .waterway-buble {
@@ -1362,8 +1362,8 @@
 }
 
 #waterway.third {
-  background-size: auto 100vh;
-  background-position: -1060px 0px;
+  background-size: auto 123vh;
+  background-position: -1010px 0;
 }
 
 #waterway.third .waterway-buble {
@@ -1372,8 +1372,8 @@
 }
 
 #waterway.four {
-  background-size: auto 105vh;
-  background-position: -1920px -5vh;
+  background-size: auto 139vh;
+  background-position: -2291px -190px;
 }
 
 #waterway.four .waterway-buble {
@@ -1553,7 +1553,7 @@
 
 .accordion-item {
   width: 660px;
-  margin: 0 0 20px 0;
+  margin: 0 0 18px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -1633,18 +1633,29 @@ footer {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 1920px auto;
-  padding: 250px 0 88px 0;
-  height: 200vh;
+  height: auto;
 }
 
 footer .faq {
-  margin: 0 0 298px 0;
+  min-height: 100vh;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
 }
 
 footer .faq .main-title {
   text-align: center;
   text-transform: uppercase;
-  margin: 0 0 50px 0;
+  margin: 0 0 63px 0;
 }
 
 .footer {
@@ -1653,13 +1664,25 @@ footer .faq .main-title {
   font-weight: 500;
   color: #fff;
   position: relative;
-  padding: 318px 0 0 0;
+  height: 970px;
+  background-color: rgba(85, 85, 85, 0.852);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 0 0 88px 0;
 }
 
 .footer .f-main-title {
   position: absolute;
   font-size: 102px;
-  top: 0;
+  top: 100px;
 }
 
 .footer .f-main-title:nth-child(1) {
@@ -1676,13 +1699,13 @@ footer .faq .main-title {
   font-family: 'Oswald';
   line-height: calc(207/140);
   color: #FF4CBD;
-  top: 62px;
+  top: 180px;
   right: 0;
 }
 
 .footer > img {
   position: absolute;
-  top: 130px;
+  top: 247px;
   left: 200px;
 }
 

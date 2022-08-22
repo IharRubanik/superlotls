@@ -961,11 +961,11 @@
   border-color: #FF4CBD;
   border-radius: 8px;
   color: #fff;
-  margin: 15px 0 -15px 0;
+  margin: 15px 0 -25px 0;
 }
 
 #waterway {
-  background: url('/img/waterway-bg.png');
+  background: url('/img/waterway-bg.jpg');
   background-size: auto 100vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -983,36 +983,39 @@
     height: auto;
     position: absolute;
     top: 70px;
-    left: 360px;
+    left: 620px;
     transition: 1s transform;
     z-index: -1;
   }
   &.first {
-    background-size: auto 100vh;
-    background-position: 0 0;
+    // background-size: auto 100vh;
+    // background-position: 0 0;
+    background-size: auto 114vh;
+    background-position: 0px -60px;
+
     .waterway-buble {
       transform: scale(1) translate(0,0);
       top: 70px;
-      left: 360px;
+      left: 620px;
     }
   }
   &.second {
-    background-size: auto 130vh;
-    background-position: -850px 0px;
+       background-size: auto 159vh;
+    background-position: -870px 0px;
     .waterway-buble {
       transform: scale(1.25) translate(38px,58px);
     }
   }
   &.third {
-    background-size: auto 100vh;
-    background-position: -1060px 0px;
+    background-size: auto 123vh;
+    background-position: -1010px 0;
     .waterway-buble {
       transform: scale(1.6) translate(56px, 70px);
     }
   }
   &.four {
-    background-size: auto 105vh;
-    background-position: -1920px -5vh;
+    background-size: auto 139vh;
+    background-position: -2291px -190px;
     .waterway-buble {
       transform: scale(1.95) translate(46px, 87px)
     }
@@ -1154,7 +1157,7 @@
 
 .accordion-item {
   width: 660px;
-  margin: 0 0 20px 0;
+  margin: 0 0 18px 0;
   border-bottom: 1px solid rgba(255,255,255,.15);
   user-select: none;
   overflow: hidden;
@@ -1221,14 +1224,21 @@ footer {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 1920px auto;
-  padding: 250px 0 88px 0;
-  height: 200vh;
+  // padding: 250px 0 88px 0;
+  // height: 200vh;
+  height: auto;
   .faq {
-    margin: 0 0 298px 0;
+    // margin: 0 0 298px 0;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
     .main-title {
       text-align: center;
       text-transform: uppercase;
-      margin: 0 0 50px 0;
+      margin: 0 0 63px 0;
     }
   }
 }
@@ -1239,11 +1249,16 @@ footer {
   font-weight: 500;
   color: #fff;
   position: relative;
-  padding: 318px 0 0 0;
+  height: 970px;
+  background-color: rgba(85, 85, 85, 0.852);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 0 0 88px 0;
   .f-main-title {
     position: absolute;
     font-size: 102px;
-    top: 0;
+    top: 100px;
     &:nth-child(1) {
       text-transform: uppercase;
     }
@@ -1256,13 +1271,13 @@ footer {
       font-family: 'Oswald';
       line-height: calc(207/140);
       color: #FF4CBD;
-      top: 62px;
+      top: 180px;
       right: 0;
     }
   }
   > img {
     position: absolute;
-    top: 130px;
+    top: 247px;
     left: 200px;
   }
   .socials {
