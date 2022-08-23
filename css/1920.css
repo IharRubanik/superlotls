@@ -565,6 +565,7 @@
   height: 4000px;
   width: 100%;
   z-index: 9;
+  opacity: 0.5;
 }
 
 .beginning .beginning-wrapper {
@@ -1239,7 +1240,7 @@
 }
 
 .fade-wrapper {
-  margin-top: -100vh;
+  margin-top: -200vh;
 }
 
 #mintwaterway {
