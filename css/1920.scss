@@ -393,6 +393,12 @@ a {
     }
   }
 }
+.beginning .beginning__container{
+  transition: .3s opacity;
+  &.remove {
+    opacity: 0!important;
+  }
+}
 .beginning {
   position: relative;
   height: 3000px;
@@ -416,6 +422,8 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
+      
+
       .beginning-background {
         width: 100%;
         height: 100%;
@@ -1083,6 +1091,7 @@ a {
   flex: none;
   width: 100vw;
   height: 100%;
+  margin-left: -1px;
   transition: 1s background-size, 1s background-position;
 
   #waterway-bg {

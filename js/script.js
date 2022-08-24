@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Beginning
 
   const beginningSection = document.querySelector('#beginning'),
+        beginningContainer = document.querySelector('.beginning__container'),
         beginningBg      = document.querySelector('.beginning-background'),
         fadeWrapper = document.querySelector('.fade-wrapper');
   
@@ -277,8 +278,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   }))
 
-  let beginningOpacity = 0,
-      mintWaterwayOpacity = 0;
+  let beginningOpacity = 0;
+      // mintWaterwayOpacity = 1;
 
   window.addEventListener('scroll', function() {
 
@@ -304,12 +305,12 @@ document.addEventListener("DOMContentLoaded", function() {
     if (beginningPercScroll < 26) {
 
       beginningOpacity = 1;
-      mintWaterwayOpacity = 0;
+      // mintWaterwayOpacity = 1;
 
-    } else if (beginningPercScroll >= 26 && beginningPercScroll <= 56) {
+    } else if (beginningPercScroll >= 26 && beginningPercScroll <= 46) {
 
-      beginningOpacity = (58 - beginningPercScroll)/30;
-      mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)/30);
+      beginningOpacity = (46 - beginningPercScroll)/20;
+      mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)/20);
 
       if (beginningOpacity <= 0.05) {
         beginningOpacity = 0;
@@ -318,22 +319,30 @@ document.addEventListener("DOMContentLoaded", function() {
         beginningOpacity = 1;
       }
 
-      if (mintWaterwayOpacity <= 0.05) {
-        mintWaterwayOpacity = 0
-      }
-      if (mintWaterwayOpacity >= 0.95) {
-        mintWaterwayOpacity = 1
-      }
+      // if (mintWaterwayOpacity <= 0.05) {
+      //   mintWaterwayOpacity = 0
+      // }
+      // if (mintWaterwayOpacity >= 0.95) {
+      //   mintWaterwayOpacity = 1
+      // }
 
-    } else if (beginningPercScroll > 56) {
+    } else if (beginningPercScroll > 46) {
 
       beginningOpacity = 0;
-      mintWaterwayOpacity = 1;
+      // mintWaterwayOpacity = 1;
 
     }
-    beginningOpacity >= 1 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
+
+    // if (mintWaterwayPercScroll >= 0) {
+    //   beginningSection.classList.add('remove');
+    // } else {
+    //   beginningSection.classList.remove('remove');
+    // }
+
+
+    beginningOpacity > 0 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
     beginningSection.style.opacity = beginningOpacity;
-    mintWaterwaySection.style.opacity = mintWaterwayOpacity;
+    // mintWaterwaySection.style.opacity = mintWaterwayOpacity;
 
     // console.log('beginningOpacity: ', beginningOpacity)
     // console.log('mintWaterwayOpacity: ', mintWaterwayOpacity)
@@ -343,22 +352,28 @@ document.addEventListener("DOMContentLoaded", function() {
     if (beginningPercScroll > 10) {
       beginningBg.style.transform = `scale(${Math.round(beginningPercScroll)/10})`;
     } else {
-      beginningBg.style.transform = `scale(1)`
+      beginningBg.style.transform = `scale(1)`;
     }
 
-    console.log(mintWaterwayScroll, mintWaterwayPercScroll)
+    if (beginningPercScroll > 14) {
+      beginningContainer.classList.add('remove')
+    } else {
+      beginningContainer.classList.remove('remove')
+    }
+
+    // console.log(mintWaterwayScroll, mintWaterwayPercScroll)
 
     if (mintWaterwayPercScroll < 10) {
       document.querySelector('.mint-test').style.transform = `translate(${0}vw,0)`
-    } else if (mintWaterwayPercScroll >= 10 && mintWaterwayPercScroll <= 36) {
+    } else if (mintWaterwayPercScroll >= 10 && mintWaterwayPercScroll <= 30) {
 
-      document.querySelector('.mint-test').style.transform = `translate(${-((mintWaterwayPercScroll - 10)/26) * 100}vw,0)`
+      document.querySelector('.mint-test').style.transform = `translate(${-((mintWaterwayPercScroll - 10)/20) * 100}vw,0)`
       // mintWaterwayWrap.classList.add('active');
-    } else if (mintWaterwayPercScroll > 36) {
+    } else if (mintWaterwayPercScroll > 30) {
       document.querySelector('.mint-test').style.transform = `translate(${-100}vw,0)`
     }
 
-    console.log(mintWaterwayScroll)
+    // console.log(mintWaterwayScroll)
 
       if (num === 1) {
         waterwaySection.classList = '';
@@ -389,7 +404,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const accordionItem = document.querySelectorAll('.accordion-item'),
         accordionTitle = document.querySelectorAll('.accordion-title'),
         accordionContent = document.querySelectorAll('.accordion-content');
-
 
     accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
       e.preventDefault();
