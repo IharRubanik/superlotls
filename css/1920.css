@@ -469,6 +469,15 @@ a {
   filter: brightness(0) invert(1);
 }
 
+.beginning .beginning__container {
+  -webkit-transition: .3s opacity;
+  transition: .3s opacity;
+}
+
+.beginning .beginning__container.remove {
+  opacity: 0 !important;
+}
+
 .beginning {
   position: relative;
   height: 3000px;
@@ -1126,6 +1135,7 @@ a {
   flex: none;
   width: 100vw;
   height: 100%;
+  -webkit-transition: 1s background-size, 1s background-position;
   transition: 1s background-size, 1s background-position;
 }
 #waterway #waterway-bg {
