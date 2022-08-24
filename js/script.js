@@ -402,17 +402,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Accordion
     const accordionItem = document.querySelectorAll('.accordion-item'),
-        accordionTitle = document.querySelectorAll('.accordion-title'),
-        accordionContent = document.querySelectorAll('.accordion-content');
+          accordionTitle = document.querySelectorAll('.accordion-title');
 
-    accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
-      e.preventDefault();
-      accordionTitle.forEach(el => el.classList.remove('add'));
-      accordionItem.forEach(el => el.classList.remove('add'));
-      accordionContent.forEach(el => el.classList.remove('add'));
-      this.classList.add('show');
-      accordionItem[i].classList.add('show');
-      accordionContent[i].classList.add('show');
-    }))
+    for (i = 0; i < accordionTitle.length; i++) {
+      accordionTitle[i].addEventListener('click', toggleItem, false);
+    }
+
+    function toggleItem() {
+      let itemClass = this.parentNode.className;
+      for (i = 0; i < accordionItem.length; i++) {
+        accordionItem[i].className = 'accordion-item';
+        accordionTitle[i].className = 'accordion-title';
+      }
+      if (itemClass == 'accordion-item') {
+        this.parentNode.className = 'accordion-item show';
+        this.closest('.accordion-title').classList.add('show');
+      }
+    }
 
 });
