@@ -229,10 +229,11 @@ a {
   -webkit-animation: 20s water linear infinite;
           animation: 20s water linear infinite;
 }
-.main .water-blur {
+.main .water-blur1 {
   z-index: 3;
   position: absolute;
-  top: 63vh;
+  bottom: 0;
+  width: 100%;
   left: 0;
 }
 .main .header {
@@ -451,6 +452,7 @@ a {
   transition: all 0.3s;
   -webkit-animation: main-button 3s linear infinite;
           animation: main-button 3s linear infinite;
+  z-index: 20;
 }
 .main .main__container .populacion-container .main-button img {
   position: absolute;
@@ -470,10 +472,8 @@ a {
 }
 
 .beginning .beginning__container {
-  -webkit-transition: .3s opacity;
-  transition: .3s opacity;
+  transition: 0.3s opacity;
 }
-
 .beginning .beginning__container.remove {
   opacity: 0 !important;
 }
@@ -483,6 +483,13 @@ a {
   height: 3000px;
   width: 100%;
   z-index: 9;
+}
+.beginning .water-blur {
+  z-index: 3;
+  position: absolute;
+  top: -4%;
+  left: 0;
+  width: 100%;
 }
 .beginning .beginning-wrapper {
   position: -webkit-sticky;
@@ -1135,7 +1142,7 @@ a {
   flex: none;
   width: 100vw;
   height: 100%;
-  -webkit-transition: 1s background-size, 1s background-position;
+  margin-left: -1px;
   transition: 1s background-size, 1s background-position;
 }
 #waterway #waterway-bg {
@@ -1336,21 +1343,19 @@ a {
   background: #fff;
 }
 #waterway .waterway-texts a {
-  color: #ff4cbd;
   text-decoration: none;
-  position: relative;
+  border: 1px solid #ff66c4;
+  color: #ff66c4;
+  border: 1px solid #ff66c4;
+  border-radius: 8px;
+  width: 155px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
-#waterway .waterway-texts a:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -5px;
-  width: calc(100% + 10px);
-  height: 100%;
-  border: 1px solid #ff4cbd;
-  border-radius: 10px;
-  opacity: 0.5;
+#waterway .waterway-texts a span {
+  margin: 0 0 4px 0;
 }
 
 .accordion-wrap {

@@ -154,10 +154,11 @@ a {
     height: 323.66px;
     animation: 20s water linear infinite;
   }
-  .water-blur {
+  .water-blur1 {
     z-index: 3;
     position: absolute;
-    top: 63vh;
+    bottom: 0;
+    width: 100%;
     left: 0;
   }
   .header {
@@ -373,6 +374,7 @@ a {
         color: #07031f;
         transition: all 0.3s;
         animation: main-button 3s linear infinite;
+        z-index: 20;
         img {
           position: absolute;
           left: 50%;
@@ -393,10 +395,10 @@ a {
     }
   }
 }
-.beginning .beginning__container{
-  transition: .3s opacity;
+.beginning .beginning__container {
+  transition: 0.3s opacity;
   &.remove {
-    opacity: 0!important;
+    opacity: 0 !important;
   }
 }
 .beginning {
@@ -409,6 +411,13 @@ a {
   // &.active {
   //   opacity: 1;
   // }
+  .water-blur {
+    z-index: 3;
+    position: absolute;
+    top: -4%;
+    left: 0;
+    width: 100%;
+  }
   .beginning-wrapper {
     position: sticky;
     top: 0;
@@ -422,7 +431,6 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
-      
 
       .beginning-background {
         width: 100%;
@@ -1021,7 +1029,7 @@ a {
     height: auto;
     z-index: -2;
 
-    .wrapper-circle{
+    .wrapper-circle {
       position: relative;
       width: 100%;
       height: 100%;
@@ -1029,14 +1037,14 @@ a {
         width: 100%;
         height: auto;
       }
-      .circle-blur{
+      .circle-blur {
         position: absolute;
         width: 100%;
         height: 100%;
         left: 0;
         top: 0;
       }
-      .character{
+      .character {
         position: absolute;
         left: 50%;
         top: 50%;
@@ -1045,11 +1053,7 @@ a {
         height: auto;
         z-index: 2;
       }
-
     }
-  
-
-
   }
 }
 .main-title {
@@ -1307,20 +1311,18 @@ a {
       }
     }
     a {
-      color: #ff4cbd;
       text-decoration: none;
-      position: relative;
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: -5px;
-        width: calc(100% + 10px);
-        height: 100%;
-        border: 1px solid #ff4cbd;
-        border-radius: 10px;
-        opacity: 0.5;
+      border: 1px solid #ff66c4;
+      color: #ff66c4;
+      border: 1px solid #ff66c4;
+      border-radius: 8px;
+      width: 155px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        margin: 0 0 4px 0;
       }
     }
   }
