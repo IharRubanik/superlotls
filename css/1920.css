@@ -901,7 +901,7 @@ a {
 .team {
   position: relative;
   height: 100vh;
-  background-color: #0d4b9e;
+  background-color: #225cbf;
   padding: 200px 0 0 0;
   overflow: hidden;
 }
@@ -1409,6 +1409,15 @@ a {
      object-fit: cover;
   -webkit-transition: all 1s;
   transition: all 1s;
+}
+
+#waterway #waterway-blur {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 5;
 }
 
 #waterway .waterway-buble {

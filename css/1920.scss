@@ -638,7 +638,8 @@ a {
 .team {
   position: relative;
   height: 100vh;
-  background-color: rgba(13, 75, 158, 1);
+  // background-color: rgba(13, 75, 158, 1);
+  background-color: #225cbf;
   padding: 200px 0 0 0;
   overflow: hidden;
   .team-background {
@@ -1060,6 +1061,14 @@ a {
     object-fit: cover;
     // transition: 1s width, 1s left, 1s top, 1s transform;
     transition: all 1s;
+  }
+  #waterway-blur{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 5;
   }
   .waterway-buble {
     width: 315px;
