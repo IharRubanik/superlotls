@@ -390,6 +390,7 @@ document.addEventListener("DOMContentLoaded", function() {
         accordionTitle = document.querySelectorAll('.accordion-title'),
         accordionContent = document.querySelectorAll('.accordion-content');
 
+
     accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
       e.preventDefault();
       accordionTitle.forEach(el => el.classList.remove('add'));
