@@ -404,7 +404,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const accordionItem = document.querySelectorAll('.accordion-item'),
           accordionTitle = document.querySelectorAll('.accordion-title');
 
-<<<<<<< HEAD
     for (i = 0; i < accordionTitle.length; i++) {
       accordionTitle[i].addEventListener('click', toggleItem, false);
     }
@@ -420,16 +419,5 @@ document.addEventListener("DOMContentLoaded", function() {
         this.closest('.accordion-title').classList.add('show');
       }
     }
-=======
-    accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
-      e.preventDefault();
-      accordionTitle.forEach(el => el.classList.remove('show'));
-      accordionItem.forEach(el => el.classList.remove('show'));
-      accordionContent.forEach(el => el.classList.remove('show'));
-      this.classList.add('show');
-      accordionItem[i].classList.add('show');
-      accordionContent[i].classList.add('show');
-    }))
->>>>>>> 79e8cddb3a7741e0834891cbf4e7f3e836dc1322
 
 });
