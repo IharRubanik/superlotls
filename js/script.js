@@ -1,17 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   // scroll
-  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  for (let smoothLink of smoothLinks) {
-    smoothLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      const id = smoothLink.getAttribute("href");
-      document.querySelector(id).scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    });
-  }
+  // const smoothLinks = document.querySelectorAll('a[href^="#"]');
+  // for (let smoothLink of smoothLinks) {
+  //   smoothLink.addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     const id = smoothLink.getAttribute("href");
+  //     document.querySelector(id).scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   });
+  // }
+
+
+  const letsSwim = document.querySelector('.main-button'); 
+
+  letsSwim.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: document.querySelector('#beginning').offsetTop,
+      behavior: "smooth"
+    })
+
+  })
 
   let circlBackground = document.querySelector(".circl-background");
   let circl2 = document.querySelector(".top");
