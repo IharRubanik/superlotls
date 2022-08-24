@@ -261,10 +261,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
 
-    x = (i === 0) ? 20 :
-        (i === 1) ? 34 :
-        (i === 2) ? 50 :
-        (i === 3) ? 68 : 84;
+    x = (i === 0) ? 30 :
+        (i === 1) ? 48 :
+        (i === 2) ? 64 :
+        (i === 3) ? 80 : 80;
 
     window.scrollTo({
       top: (mintWaterwaySection.offsetTop + mintWaterwaySection.clientHeight/100 * x) - 4,
@@ -285,13 +285,15 @@ document.addEventListener("DOMContentLoaded", function() {
     mintWaterwayPercScroll = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
     beginningPercScroll = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
 
-    if (beginningPercScroll < 46) {
-      beginningOpacity = 1;
-      mintWaterwayOpacity = 0
-    } else if (beginningPercScroll >= 46 && beginningPercScroll <= 56) {
+    if (beginningPercScroll < 56) {
 
-      beginningOpacity = (56 - beginningPercScroll)/10;
-      mintWaterwayOpacity = (-1 * (46 - beginningPercScroll) / 10);
+      beginningOpacity = 1;
+      mintWaterwayOpacity = 0;
+
+    } else if (beginningPercScroll >= 56 && beginningPercScroll <= 66) {
+
+      beginningOpacity = (66 - beginningPercScroll)/10;
+      mintWaterwayOpacity = (-1 * (56 - beginningPercScroll) / 10);
 
       if (beginningOpacity <= 0.1) {
         beginningOpacity = 0;
@@ -307,9 +309,11 @@ document.addEventListener("DOMContentLoaded", function() {
         mintWaterwayOpacity = 1
       }
 
-    } else if (beginningPercScroll > 56) {
+    } else if (beginningPercScroll > 66) {
+
       beginningOpacity = 0;
       mintWaterwayOpacity = 1;
+
     }
 
     beginningOpacity >= 1 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
@@ -319,8 +323,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // console.log('beginningOpacity: ', beginningOpacity)
     // console.log('mintWaterwayOpacity: ', mintWaterwayOpacity)
+    console.log('beginningPercScroll: ', beginningPercScroll)
     console.log('mintWaterwayPercScroll: ', mintWaterwayPercScroll)
-    // console.log(beginningPercScroll)
+    
 
     // console.log(beginningPercScroll)
 
@@ -343,20 +348,15 @@ document.addEventListener("DOMContentLoaded", function() {
     //   fadeWrapper.classList.remove('active');
     // }
 
-    // console.log(beginningPercScroll)
-
-    // console.log(mintWaterwayPercScroll)
-
-    if (mintWaterwayPercScroll > 10) {
+    if (mintWaterwayPercScroll > 20) {
       mintWaterwayWrap.classList.add('active');
     } else {
       mintWaterwayWrap.classList.remove('active');
     }
 
-    num = (mintWaterwayPercScroll <= 20) ? 0 :
-          (mintWaterwayPercScroll < 36) ? 1 :
-          (mintWaterwayPercScroll < 52) ? 2 :
-          (mintWaterwayPercScroll < 68) ? 3 :
+    num = (mintWaterwayPercScroll <= 36) ? 0 :
+          (mintWaterwayPercScroll < 52) ? 1 :
+          (mintWaterwayPercScroll < 68) ? 2 :
           (mintWaterwayPercScroll < 84) ? 3 : 3;
 
       if (num === 0) {

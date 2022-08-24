@@ -597,7 +597,7 @@ a {
 
 .beginning {
   position: relative;
-  height: 3000px;
+  height: 5000px;
   width: 100%;
   z-index: 9;
 }
@@ -1276,7 +1276,7 @@ a {
 }
 
 .fade-wrapper {
-  margin-top: -1000px;
+  margin-top: -112.5vw;
 }
 
 #mintwaterway {
