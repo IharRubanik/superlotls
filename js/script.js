@@ -146,7 +146,6 @@ document.addEventListener("DOMContentLoaded", function() {
   buttonNext.addEventListener("click", nextSlide);
 
   const canvas1 = document.getElementById("c1");
-  // console.log(canvas1)
 
   // Вешаем на прикосновение функцию handleTouchStart
   canvas1.addEventListener("touchstart", handleTouchStart, false);
