@@ -264,10 +264,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
 
-console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWaterwaySection.clientHeight/5) *i )
+    // console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWaterwaySection.clientHeight/5) *i )
 
     window.scrollTo({
-      top: mintWaterwaySection.offsetTop + + (mintWaterwaySection.clientHeight/5) * (i + 1),
+      top: mintWaterwaySection.offsetTop + (mintWaterwaySection.clientHeight/6) * (i + 2),
     })
 
     waterwayText.scrollTo({
@@ -290,49 +290,48 @@ console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWate
     mintWaterwayHeight = mintWaterwaySection.clientHeight;
     mintWaterwayScroll = window.pageYOffset - mintWaterwaySection.offsetTop;
 
-    console.log(mintWaterwayScroll)
+    // console.log(mintWaterwayScroll)
 
-    mintWaterwayScroll < 2 * (mintWaterwayHeight / 5) - 300 ?
+    mintWaterwayScroll < 3 * (mintWaterwayHeight / 6) - 300 ?
     (num = 1) :
-    mintWaterwayScroll < 3 * (mintWaterwayHeight / 5) - 300 ?
+    mintWaterwayScroll < 4 * (mintWaterwayHeight / 6) - 300 ?
     (num = 2) :
-    mintWaterwayScroll < 4 * (mintWaterwayHeight / 5) - 300 ?
+    mintWaterwayScroll < 5 * (mintWaterwayHeight / 6) - 300 ?
     (num = 3) : (num = 4);
 
     /**/
 
-    if (beginningPercScroll < 56) {
+    if (beginningPercScroll < 26) {
 
       beginningOpacity = 1;
       mintWaterwayOpacity = 0;
 
-    } else if (beginningPercScroll >= 56 && beginningPercScroll <= 66) {
+    } else if (beginningPercScroll >= 26 && beginningPercScroll <= 56) {
 
-      beginningOpacity = (66 - beginningPercScroll)/10;
-      mintWaterwayOpacity = (-1 * (56 - beginningPercScroll) / 10);
+      beginningOpacity = (58 - beginningPercScroll)/30;
+      mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)/30);
 
-      if (beginningOpacity <= 0.1) {
+      if (beginningOpacity <= 0.05) {
         beginningOpacity = 0;
       }
-      if (beginningOpacity >= 0.8) {
+      if (beginningOpacity >= 0.95) {
         beginningOpacity = 1;
       }
 
-      if (mintWaterwayOpacity <= 0.1) {
+      if (mintWaterwayOpacity <= 0.05) {
         mintWaterwayOpacity = 0
       }
-      if (mintWaterwayOpacity >= 0.8) {
+      if (mintWaterwayOpacity >= 0.95) {
         mintWaterwayOpacity = 1
       }
 
-    } else if (beginningPercScroll > 66) {
+    } else if (beginningPercScroll > 56) {
 
       beginningOpacity = 0;
       mintWaterwayOpacity = 1;
 
     }
     beginningOpacity >= 1 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
-
     beginningSection.style.opacity = beginningOpacity;
     mintWaterwaySection.style.opacity = mintWaterwayOpacity;
 
@@ -340,34 +339,26 @@ console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWate
     // console.log('mintWaterwayOpacity: ', mintWaterwayOpacity)
     // console.log('beginningPercScroll: ', beginningPercScroll)
     // console.log('mintWaterwayPercScroll: ', mintWaterwayPercScroll)
-    
 
-    // console.log(beginningPercScroll)
-
-    // if (beginningPercScroll > 0) {
-    //   beginningBg.style.transform = `scale(1.${Math.floor(beginningPercScroll)})`;
-    //   let num = `0.${beginningPercScroll}`;
-    //   let beginningOpacity = Number(num);
-    //   let mintWaterwayOpacity = 1 - beginningOpacity
-    //   console.log(typeof(+num))
-    //   beginningSection.style.opacity = `${mintWaterwayOpacity}`
-    // } else {
-    //   beginningBg.style.transform = `scale(1)`
-    // }
-
-    // if (beginningPercScroll >= 72) {
-    //   beginningSection.classList.remove('active');
-    //   fadeWrapper.classList.add('active');
-    // } else {
-    //   beginningSection.classList.add('active');
-    //   fadeWrapper.classList.remove('active');
-    // }
-
-    if (mintWaterwayScroll > (mintWaterwayHeight / 5) - 100) {
-      mintWaterwayWrap.classList.add('active');
+    if (beginningPercScroll > 10) {
+      beginningBg.style.transform = `scale(${Math.round(beginningPercScroll)/10})`;
     } else {
-      mintWaterwayWrap.classList.remove('active');
+      beginningBg.style.transform = `scale(1)`
     }
+
+    console.log(mintWaterwayScroll, mintWaterwayPercScroll)
+
+    if (mintWaterwayPercScroll < 10) {
+      document.querySelector('.mint-test').style.transform = `translate(${0}vw,0)`
+    } else if (mintWaterwayPercScroll >= 10 && mintWaterwayPercScroll <= 36) {
+
+      document.querySelector('.mint-test').style.transform = `translate(${-((mintWaterwayPercScroll - 10)/26) * 100}vw,0)`
+      // mintWaterwayWrap.classList.add('active');
+    } else if (mintWaterwayPercScroll > 36) {
+      document.querySelector('.mint-test').style.transform = `translate(${-100}vw,0)`
+    }
+
+    console.log(mintWaterwayScroll)
 
       if (num === 1) {
         waterwaySection.classList = '';

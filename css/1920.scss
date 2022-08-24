@@ -395,10 +395,9 @@ a {
 }
 .beginning {
   position: relative;
-  height: 5000px;
+  height: 3000px;
   width: 100%;
   z-index: 9;
-  // transition: 1s opacity;
   // opacity: 0.5;
   // transition: 1s opacity;
   // &.active {
@@ -953,7 +952,7 @@ a {
 
 #mintwaterway {
   width: 100%;
-  height: 500vh;
+  height: 8000px;
   display: flex;
   position: relative;
   #mint-waterway-wrap {
@@ -1039,7 +1038,7 @@ a {
 .mint-test {
   display: flex;
   width: 200vw;
-  transition: 1s transform;
+  // transition: 1s transform;
 }
 
 #waterway {
