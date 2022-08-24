@@ -232,10 +232,13 @@ document.addEventListener("DOMContentLoaded", function() {
         beginningBg      = document.querySelector('.beginning-background'),
         fadeWrapper = document.querySelector('.fade-wrapper');
   
+  let mintWaterwayHeight = 0,
+      mintWaterwayScroll = 0;
 
   // Waterway 
   const mintBtn = document.querySelector('#mint .btn'),
         mintWaterwayWrap = document.querySelector('#mint-waterway-wrap'),
+        mintSection = document.querySelector('#mint'),
         mintWaterwaySection = document.querySelector('#mintwaterway'),
         waterwaySection = document.querySelector('#waterway'),
         waterwayTabs = document.querySelectorAll('.waterway-tabs a'),
@@ -246,12 +249,12 @@ document.addEventListener("DOMContentLoaded", function() {
       num = 0,
       numOld = 0;
 
-  mintBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: mintWaterwaySection.offsetTop + mintWaterwaySection.clientHeight/100 + 1000,
-    })
-  })
+  // mintBtn.addEventListener('click', function(e) {
+  //   e.preventDefault();
+  //   window.scrollTo({
+  //     top: mintWaterwaySection.offsetTop + mintWaterwaySection.clientHeight/100 + 1000,
+  //   })
+  // })
 
   waterwayTabs.forEach((el,i) => el.addEventListener('click', function(e) {
     e.preventDefault();
@@ -261,13 +264,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
 
-    x = (i === 0) ? 30 :
-        (i === 1) ? 48 :
-        (i === 2) ? 64 :
-        (i === 3) ? 80 : 80;
+console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWaterwaySection.clientHeight/5) *i )
 
     window.scrollTo({
-      top: (mintWaterwaySection.offsetTop + mintWaterwaySection.clientHeight/100 * x) - 4,
+      top: mintWaterwaySection.offsetTop + + (mintWaterwaySection.clientHeight/5) * (i + 1),
     })
 
     waterwayText.scrollTo({
@@ -284,6 +284,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     mintWaterwayPercScroll = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
     beginningPercScroll = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
+
+    /**/
+
+    mintWaterwayHeight = mintWaterwaySection.clientHeight;
+    mintWaterwayScroll = window.pageYOffset - mintWaterwaySection.offsetTop;
+
+    console.log(mintWaterwayScroll)
+
+    mintWaterwayScroll < 2 * (mintWaterwayHeight / 5) - 300 ?
+    (num = 1) :
+    mintWaterwayScroll < 3 * (mintWaterwayHeight / 5) - 300 ?
+    (num = 2) :
+    mintWaterwayScroll < 4 * (mintWaterwayHeight / 5) - 300 ?
+    (num = 3) : (num = 4);
+
+    /**/
 
     if (beginningPercScroll < 56) {
 
@@ -315,7 +331,6 @@ document.addEventListener("DOMContentLoaded", function() {
       mintWaterwayOpacity = 1;
 
     }
-
     beginningOpacity >= 1 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
 
     beginningSection.style.opacity = beginningOpacity;
@@ -323,8 +338,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // console.log('beginningOpacity: ', beginningOpacity)
     // console.log('mintWaterwayOpacity: ', mintWaterwayOpacity)
-    console.log('beginningPercScroll: ', beginningPercScroll)
-    console.log('mintWaterwayPercScroll: ', mintWaterwayPercScroll)
+    // console.log('beginningPercScroll: ', beginningPercScroll)
+    // console.log('mintWaterwayPercScroll: ', mintWaterwayPercScroll)
     
 
     // console.log(beginningPercScroll)
@@ -348,37 +363,32 @@ document.addEventListener("DOMContentLoaded", function() {
     //   fadeWrapper.classList.remove('active');
     // }
 
-    if (mintWaterwayPercScroll > 20) {
+    if (mintWaterwayScroll > (mintWaterwayHeight / 5) - 100) {
       mintWaterwayWrap.classList.add('active');
     } else {
       mintWaterwayWrap.classList.remove('active');
     }
 
-    num = (mintWaterwayPercScroll <= 36) ? 0 :
-          (mintWaterwayPercScroll < 52) ? 1 :
-          (mintWaterwayPercScroll < 68) ? 2 :
-          (mintWaterwayPercScroll < 84) ? 3 : 3;
-
-      if (num === 0) {
+      if (num === 1) {
         waterwaySection.classList = '';
         waterwaySection.classList.add('first');
       }
-      if (num === 1) {
+      if (num === 2) {
         waterwaySection.classList = '';
         waterwaySection.classList.add('second');
       }
-      if (num === 2) {
+      if (num === 3) {
         waterwaySection.classList = '';
         waterwaySection.classList.add('third');
       }
-      if (num === 3) {
+      if (num === 4) {
         waterwaySection.classList = '';
         waterwaySection.classList.add('four');
       }
 
       if (num !== numOld) {
         numOld = num;
-        waterwayTabs[num].click();
+        waterwayTabs[num - 1].click();
       }
 
     })
@@ -391,9 +401,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
       e.preventDefault();
-      this.classList.toggle('show');
-      accordionItem[i].classList.toggle('show');
-      accordionContent[i].classList.toggle('show');
+      accordionTitle.forEach(el => el.classList.remove('add'));
+      accordionItem.forEach(el => el.classList.remove('add'));
+      accordionContent.forEach(el => el.classList.remove('add'));
+      this.classList.add('show');
+      accordionItem[i].classList.add('show');
+      accordionContent[i].classList.add('show');
     }))
 
 });
