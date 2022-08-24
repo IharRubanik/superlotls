@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-
+document.addEventListener("DOMContentLoaded", function () {
   // scroll
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
   for (let smoothLink of smoothLinks) {
@@ -86,10 +85,10 @@ document.addEventListener("DOMContentLoaded", function() {
   let buttonPrev = document.querySelector(".button-prev");
 
   function nextSlide() {
-    buttonPrev.classList.remove('active')
+    buttonPrev.classList.remove("active");
     for (let i = 0; i < slides.length; i++) {
-      if(i == slides.length - 2){
-        buttonNext.classList.add('active')
+      if (i == slides.length - 2) {
+        buttonNext.classList.add("active");
       }
       if (
         slides[i].classList.contains("active") &&
@@ -97,19 +96,16 @@ document.addEventListener("DOMContentLoaded", function() {
       ) {
         slides[i + 1].classList.replace("centr", "active");
         slides[i].classList.replace("active", "none");
-        
+
         if (slides[i + 2]) {
           slides[i + 2].classList.replace("left", "centr");
-      
         }
         if (slides[i + 3]) {
           slides[i + 3].classList.add("left");
           slides[i + 3].classList.remove("none-reverce");
-          
         }
         if (slides[i - 1]) {
           slides[i - 1].classList.remove("centr");
-          
         }
         break;
       }
@@ -117,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function prevSlide() {
-    buttonNext.classList.remove('active')
+    buttonNext.classList.remove("active");
     for (let i = 0; i < slides.length; i++) {
       if (
         slides[i].classList.contains("active") &&
@@ -126,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (slides[i - 1]) {
           slides[i - 1].classList.replace("none", "active");
           slides[i].classList.replace("active", "centr");
-          
+
           if (slides[i + 1]) {
             slides[i + 1].classList.replace("centr", "left");
           }
@@ -134,9 +130,9 @@ document.addEventListener("DOMContentLoaded", function() {
             slides[i + 2].classList.replace("left", "none-reverce");
           }
         }
-          if(i == 1){
-        buttonPrev.classList.add('active')
-      }
+        if (i == 1) {
+          buttonPrev.classList.add("active");
+        }
         break;
       }
     }
@@ -176,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (xDiff > 0) {
         /* left swipe */
         prevSlide();
-          // canvas1.classList.add('touch')
+        // canvas1.classList.add('touch')
       } else {
         /* right swipe */
         nextSlide();
@@ -186,7 +182,6 @@ document.addEventListener("DOMContentLoaded", function() {
       // Это вам, в общем-то, не надо, вы ведь только влево-вправо собираетесь двигать
       if (yDiff > 0) {
         //   canvas1.classList.remove('touch')
-
         // canvas1.classList.remove('touch')
         /* up swipe */
       } else {
@@ -228,26 +223,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Beginning
 
-  const beginningSection = document.querySelector('#beginning'),
-        beginningBg      = document.querySelector('.beginning-background'),
-        fadeWrapper = document.querySelector('.fade-wrapper');
-  
-  let mintWaterwayHeight = 0,
-      mintWaterwayScroll = 0;
+  const beginningSection = document.querySelector("#beginning"),
+    beginningBg = document.querySelector(".beginning-background"),
+    fadeWrapper = document.querySelector(".fade-wrapper");
 
-  // Waterway 
-  const mintBtn = document.querySelector('#mint .btn'),
-        mintWaterwayWrap = document.querySelector('#mint-waterway-wrap'),
-        mintSection = document.querySelector('#mint'),
-        mintWaterwaySection = document.querySelector('#mintwaterway'),
-        waterwaySection = document.querySelector('#waterway'),
-        waterwayTabs = document.querySelectorAll('.waterway-tabs a'),
-        waterwayText = document.querySelector('.waterway-texts'),
-        waterwayTab = document.querySelectorAll('.waterway-tab');
+  let mintWaterwayHeight = 0,
+    mintWaterwayScroll = 0;
+
+  // Waterway
+  const mintBtn = document.querySelector("#mint .btn"),
+    mintWaterwayWrap = document.querySelector("#mint-waterway-wrap"),
+    mintSection = document.querySelector("#mint"),
+    mintWaterwaySection = document.querySelector("#mintwaterway"),
+    waterwaySection = document.querySelector("#waterway"),
+    waterwayTabs = document.querySelectorAll(".waterway-tabs a"),
+    waterwayText = document.querySelector(".waterway-texts"),
+    waterwayTab = document.querySelectorAll(".waterway-tab");
 
   let mintWaterwayPercScroll = 0,
-      num = 0,
-      numOld = 0;
+    num = 0,
+    numOld = 0;
 
   // mintBtn.addEventListener('click', function(e) {
   //   e.preventDefault();
@@ -256,34 +251,43 @@ document.addEventListener("DOMContentLoaded", function() {
   //   })
   // })
 
-  waterwayTabs.forEach((el,i) => el.addEventListener('click', function(e) {
-    e.preventDefault();
+  waterwayTabs.forEach((el, i) =>
+    el.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    waterwayTab.forEach(el => el.classList.remove('active'));
-    waterwayTab[i].classList.add('active');
+      waterwayTab.forEach((el) => el.classList.remove("active"));
+      waterwayTab[i].classList.add("active");
 
-    const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
+      const range =
+        document.querySelector(`#waterway-text-${i + 1}`).offsetTop -
+        waterwayText.offsetTop -
+        1;
 
-    // console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWaterwaySection.clientHeight/5) *i )
+      // console.log(mintWaterwaySection.offsetTop + mintSection.clientHeight + (mintWaterwaySection.clientHeight/5) *i )
 
-    window.scrollTo({
-      top: mintWaterwaySection.offsetTop + (mintWaterwaySection.clientHeight/6) * (i + 2),
+      window.scrollTo({
+        top:
+          mintWaterwaySection.offsetTop +
+          (mintWaterwaySection.clientHeight / 6) * (i + 2),
+      });
+
+      waterwayText.scrollTo({
+        top: range,
+        behavior: "smooth",
+      });
     })
-
-    waterwayText.scrollTo({
-      top: range,
-      behavior: "smooth"
-    });
-
-  }))
+  );
 
   let beginningOpacity = 0,
-      mintWaterwayOpacity = 0;
+    mintWaterwayOpacity = 0;
 
-  window.addEventListener('scroll', function() {
-
-    mintWaterwayPercScroll = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
-    beginningPercScroll = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
+  window.addEventListener("scroll", function () {
+    mintWaterwayPercScroll =
+      (-1 * mintWaterwaySection.getBoundingClientRect().y) /
+      (mintWaterwaySection.clientHeight / 100);
+    beginningPercScroll =
+      (-1 * beginningSection.getBoundingClientRect().y) /
+      (beginningSection.clientHeight / 100);
 
     /**/
 
@@ -292,24 +296,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // console.log(mintWaterwayScroll)
 
-    mintWaterwayScroll < 3 * (mintWaterwayHeight / 6) - 300 ?
-    (num = 1) :
-    mintWaterwayScroll < 4 * (mintWaterwayHeight / 6) - 300 ?
-    (num = 2) :
-    mintWaterwayScroll < 5 * (mintWaterwayHeight / 6) - 300 ?
-    (num = 3) : (num = 4);
+    mintWaterwayScroll < 3 * (mintWaterwayHeight / 6) - 300
+      ? (num = 1)
+      : mintWaterwayScroll < 4 * (mintWaterwayHeight / 6) - 300
+      ? (num = 2)
+      : mintWaterwayScroll < 5 * (mintWaterwayHeight / 6) - 300
+      ? (num = 3)
+      : (num = 4);
 
     /**/
 
     if (beginningPercScroll < 26) {
-
       beginningOpacity = 1;
       mintWaterwayOpacity = 0;
-
     } else if (beginningPercScroll >= 26 && beginningPercScroll <= 56) {
-
-      beginningOpacity = (58 - beginningPercScroll)/30;
-      mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)/30);
+      beginningOpacity = (58 - beginningPercScroll) / 30;
+      mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)) / 30;
 
       if (beginningOpacity <= 0.05) {
         beginningOpacity = 0;
@@ -319,19 +321,18 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       if (mintWaterwayOpacity <= 0.05) {
-        mintWaterwayOpacity = 0
+        mintWaterwayOpacity = 0;
       }
       if (mintWaterwayOpacity >= 0.95) {
-        mintWaterwayOpacity = 1
+        mintWaterwayOpacity = 1;
       }
-
     } else if (beginningPercScroll > 56) {
-
       beginningOpacity = 0;
       mintWaterwayOpacity = 1;
-
     }
-    beginningOpacity >= 1 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
+    beginningOpacity >= 1
+      ? (beginningSection.style.zIndex = 9)
+      : (beginningSection.style.zIndex = -1);
     beginningSection.style.opacity = beginningOpacity;
     mintWaterwaySection.style.opacity = mintWaterwayOpacity;
 
@@ -341,64 +342,69 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log('mintWaterwayPercScroll: ', mintWaterwayPercScroll)
 
     if (beginningPercScroll > 10) {
-      beginningBg.style.transform = `scale(${Math.round(beginningPercScroll)/10})`;
+      beginningBg.style.transform = `scale(${
+        Math.round(beginningPercScroll) / 10
+      })`;
     } else {
-      beginningBg.style.transform = `scale(1)`
+      beginningBg.style.transform = `scale(1)`;
     }
 
-    console.log(mintWaterwayScroll, mintWaterwayPercScroll)
+    console.log(mintWaterwayScroll, mintWaterwayPercScroll);
 
     if (mintWaterwayPercScroll < 10) {
-      document.querySelector('.mint-test').style.transform = `translate(${0}vw,0)`
+      document.querySelector(
+        ".mint-test"
+      ).style.transform = `translate(${0}vw,0)`;
     } else if (mintWaterwayPercScroll >= 10 && mintWaterwayPercScroll <= 36) {
-
-      document.querySelector('.mint-test').style.transform = `translate(${-((mintWaterwayPercScroll - 10)/26) * 100}vw,0)`
+      document.querySelector(".mint-test").style.transform = `translate(${
+        -((mintWaterwayPercScroll - 10) / 26) * 100
+      }vw,0)`;
       // mintWaterwayWrap.classList.add('active');
     } else if (mintWaterwayPercScroll > 36) {
-      document.querySelector('.mint-test').style.transform = `translate(${-100}vw,0)`
+      document.querySelector(
+        ".mint-test"
+      ).style.transform = `translate(${-100}vw,0)`;
     }
 
-    console.log(mintWaterwayScroll)
+    console.log(mintWaterwayScroll);
 
-      if (num === 1) {
-        waterwaySection.classList = '';
-        waterwaySection.classList.add('first');
-      }
-      if (num === 2) {
-        waterwaySection.classList = '';
-        waterwaySection.classList.add('second');
-      }
-      if (num === 3) {
-        waterwaySection.classList = '';
-        waterwaySection.classList.add('third');
-      }
-      if (num === 4) {
-        waterwaySection.classList = '';
-        waterwaySection.classList.add('four');
-      }
+    if (num === 1) {
+      waterwaySection.classList = "";
+      waterwaySection.classList.add("first");
+    }
+    if (num === 2) {
+      waterwaySection.classList = "";
+      waterwaySection.classList.add("second");
+    }
+    if (num === 3) {
+      waterwaySection.classList = "";
+      waterwaySection.classList.add("third");
+    }
+    if (num === 4) {
+      waterwaySection.classList = "";
+      waterwaySection.classList.add("four");
+    }
 
-      if (num !== numOld) {
-        numOld = num;
-        waterwayTabs[num - 1].click();
-      }
+    if (num !== numOld) {
+      numOld = num;
+      waterwayTabs[num - 1].click();
+    }
+  });
 
-    })
-
-
-    // Accordion
-    const accordionItem = document.querySelectorAll('.accordion-item'),
-        accordionTitle = document.querySelectorAll('.accordion-title'),
-        accordionContent = document.querySelectorAll('.accordion-content');
+  // Accordion
+  const accordionItem = document.querySelectorAll(".accordion-item"),
+    accordionTitle = document.querySelectorAll(".accordion-title"),
+    accordionContent = document.querySelectorAll(".accordion-content");
 
 
-    accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
-      e.preventDefault();
-      accordionTitle.forEach(el => el.classList.remove('add'));
-      accordionItem.forEach(el => el.classList.remove('add'));
-      accordionContent.forEach(el => el.classList.remove('add'));
-      this.classList.add('show');
-      accordionItem[i].classList.add('show');
-      accordionContent[i].classList.add('show');
-    }))
 
+  accordionTitle.forEach((el, i) => el.addEventListener('click', function(e) {
+    e.preventDefault();
+    accordionTitle.forEach(el => el.classList.remove('show'));
+    accordionItem.forEach(el => el.classList.remove('show'));
+    accordionContent.forEach(el => el.classList.remove('show'));
+    this.classList.add('show');
+    accordionItem[i].classList.add('show');
+    accordionContent[i].classList.add('show');
+  }))
 });
