@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
         waterwayText = document.querySelector('.waterway-texts'),
         waterwayTab = document.querySelectorAll('.waterway-tab');
 
-  let percentScrolled = 0,
+  let mintWaterwayPercScroll = 0,
       num = 0,
       numOld = 0;
 
@@ -277,23 +277,65 @@ document.addEventListener("DOMContentLoaded", function() {
 
   }))
 
+  let beginningOpacity = 0,
+      mintWaterwayOpacity = 0;
+
   window.addEventListener('scroll', function() {
 
-    percentScrolled = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
+    mintWaterwayPercScroll = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
+    beginningPercScroll = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
 
-    // percentScrolled2 = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
-    // if (percentScrolled2 > 0) {
-    //   beginningBg.style.transform = `scale(1.${Math.floor(percentScrolled2)})`;
-    //   let num = `0.${percentScrolled2}`;
-    //   let numz = Number(num);
-    //   let numz2 = 1 - numz
+    if (beginningPercScroll < 46) {
+      beginningOpacity = 1;
+      mintWaterwayOpacity = 0
+    } else if (beginningPercScroll >= 46 && beginningPercScroll <= 56) {
+
+      beginningOpacity = (56 - beginningPercScroll)/10;
+      mintWaterwayOpacity = (-1 * (46 - beginningPercScroll) / 10);
+
+      if (beginningOpacity <= 0.1) {
+        beginningOpacity = 0;
+      }
+      if (beginningOpacity >= 0.8) {
+        beginningOpacity = 1;
+      }
+
+      if (mintWaterwayOpacity <= 0.1) {
+        mintWaterwayOpacity = 0
+      }
+      if (mintWaterwayOpacity >= 0.8) {
+        mintWaterwayOpacity = 1
+      }
+
+    } else if (beginningPercScroll > 56) {
+      beginningOpacity = 0;
+      mintWaterwayOpacity = 1;
+    }
+
+    beginningOpacity >= 1 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
+
+    beginningSection.style.opacity = beginningOpacity;
+    mintWaterwaySection.style.opacity = mintWaterwayOpacity;
+
+    // console.log('beginningOpacity: ', beginningOpacity)
+    // console.log('mintWaterwayOpacity: ', mintWaterwayOpacity)
+    console.log('mintWaterwayPercScroll: ', mintWaterwayPercScroll)
+    // console.log(beginningPercScroll)
+
+    // console.log(beginningPercScroll)
+
+    // if (beginningPercScroll > 0) {
+    //   beginningBg.style.transform = `scale(1.${Math.floor(beginningPercScroll)})`;
+    //   let num = `0.${beginningPercScroll}`;
+    //   let beginningOpacity = Number(num);
+    //   let mintWaterwayOpacity = 1 - beginningOpacity
     //   console.log(typeof(+num))
-    //   beginningSection.style.opacity = `${numz2}`
+    //   beginningSection.style.opacity = `${mintWaterwayOpacity}`
     // } else {
     //   beginningBg.style.transform = `scale(1)`
     // }
 
-    // if (percentScrolled2 >= 72) {
+    // if (beginningPercScroll >= 72) {
     //   beginningSection.classList.remove('active');
     //   fadeWrapper.classList.add('active');
     // } else {
@@ -301,43 +343,43 @@ document.addEventListener("DOMContentLoaded", function() {
     //   fadeWrapper.classList.remove('active');
     // }
 
-    // console.log(percentScrolled2)
+    // console.log(beginningPercScroll)
 
-    // console.log(percentScrolled)
+    // console.log(mintWaterwayPercScroll)
 
-    if (percentScrolled > 10) {
+    if (mintWaterwayPercScroll > 10) {
       mintWaterwayWrap.classList.add('active');
     } else {
       mintWaterwayWrap.classList.remove('active');
     }
 
-    num = (percentScrolled <= 20) ? 0 :
-          (percentScrolled < 36) ? 1 :
-          (percentScrolled < 52) ? 2 :
-          (percentScrolled < 68) ? 3 :
-          (percentScrolled < 84) ? 3 : 3;
+    num = (mintWaterwayPercScroll <= 20) ? 0 :
+          (mintWaterwayPercScroll < 36) ? 1 :
+          (mintWaterwayPercScroll < 52) ? 2 :
+          (mintWaterwayPercScroll < 68) ? 3 :
+          (mintWaterwayPercScroll < 84) ? 3 : 3;
 
-    if (num === 0) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('first');
-    }
-    if (num === 1) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('second');
-    }
-    if (num === 2) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('third');
-    }
-    if (num === 3) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('four');
-    }
+      if (num === 0) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('first');
+      }
+      if (num === 1) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('second');
+      }
+      if (num === 2) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('third');
+      }
+      if (num === 3) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('four');
+      }
 
-    if (num !== numOld) {
-      numOld = num;
-      waterwayTabs[num].click();
-    }
+      if (num !== numOld) {
+        numOld = num;
+        waterwayTabs[num].click();
+      }
 
     })
 
