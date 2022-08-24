@@ -901,7 +901,6 @@ a {
 .team {
   position: relative;
   height: 100vh;
-  background-color: #225cbf;
   padding: 200px 0 0 0;
   overflow: hidden;
 }
@@ -1418,6 +1417,10 @@ a {
   width: 100%;
   height: auto;
   z-index: 5;
+  opacity: 0;
+  height: 340px;
+  -webkit-transition: 1s opacity;
+  transition: 1s opacity;
 }
 
 #waterway .waterway-buble {
@@ -1492,6 +1495,10 @@ a {
   left: -994px;
 }
 
+#waterway.third #waterway-blur {
+  opacity: 1;
+}
+
 #waterway.third .waterway-buble {
   -webkit-transform: scale(1.6) translate(56px, 70px);
           transform: scale(1.6) translate(56px, 70px);
@@ -1502,6 +1509,10 @@ a {
   top: -192px;
   left: -2284px;
   min-height: 116%;
+}
+
+#waterway.four #waterway-blur {
+  opacity: 1;
 }
 
 #waterway.four .waterway-buble {
@@ -1554,6 +1565,7 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
   gap: 42px;
+  z-index: 6;
 }
 
 #waterway .waterway-tabs a {
@@ -1579,6 +1591,7 @@ a {
   height: 100vh;
   overflow-y: hidden;
   color: #fff;
+  z-index: 6;
 }
 
 #waterway .waterway-texts .text-accent {
@@ -1668,6 +1681,7 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 6;
 }
 
 .accordion {
@@ -1781,7 +1795,7 @@ footer .footer-background {
 footer .footer-light {
   position: absolute;
   left: 360px;
-  top: -90px;
+  top: -50px;
   width: 2013px;
   -o-object-fit: cover;
      object-fit: cover;

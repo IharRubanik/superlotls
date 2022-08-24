@@ -639,7 +639,7 @@ a {
   position: relative;
   height: 100vh;
   // background-color: rgba(13, 75, 158, 1);
-  background-color: #225cbf;
+  // background-color: #225cbf;
   padding: 200px 0 0 0;
   overflow: hidden;
   .team-background {
@@ -1069,6 +1069,9 @@ a {
     width: 100%;
     height: auto;
     z-index: 5;
+    opacity: 0;
+    height: 340px;
+    transition: 1s opacity;
   }
   .waterway-buble {
     width: 315px;
@@ -1131,6 +1134,9 @@ a {
       top: 0;
       left: -994px;
     }
+    #waterway-blur{
+      opacity: 1;
+    }
     .waterway-buble {
       transform: scale(1.6) translate(56px, 70px);
     }
@@ -1141,6 +1147,9 @@ a {
       top: -192px;
       left: -2284px;
       min-height: 116%;
+    }
+    #waterway-blur{
+      opacity: 1;
     }
     .waterway-buble {
       transform: scale(1.95) translate(46px, 87px);
@@ -1176,6 +1185,7 @@ a {
     flex-direction: column;
     align-items: flex-start;
     gap: 42px;
+    z-index: 6;
 
     a {
       font-size: 32px;
@@ -1198,6 +1208,7 @@ a {
     height: 100vh;
     overflow-y: hidden;
     color: #fff;
+    z-index: 6;
     // overflow-y: scroll;
     .text-accent {
       color: #ff4cbd;
@@ -1275,6 +1286,7 @@ a {
 .accordion-wrap {
   display: flex;
   justify-content: space-between;
+  z-index: 6;
 }
 
 .accordion {
@@ -1364,7 +1376,7 @@ footer {
   .footer-light {
     position: absolute;
     left: 360px;
-    top: -90px;
+    top: -50px;
     width: 2013px;
     object-fit: cover;
     height: auto;
