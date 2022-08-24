@@ -1532,7 +1532,7 @@ a {
 }
 
 #waterway .waterway-tabs {
-  margin: 9% 0 0 0;
+  margin: 128px 0 0 0;
   width: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1608,7 +1608,7 @@ a {
   font-family: "Oswald";
   font-weight: 400;
   color: #fff;
-  margin: 0 0 30px 0;
+  margin: 35px 0 0 0;
 }
 
 #waterway .waterway-texts ul li {
