@@ -1005,7 +1005,7 @@ a {
   transform: translate(0, -50%);
   width: 65.5px;
   height: 22px;
-  background-image: url("/img/btn-stripes.svg");
+  background-image: url("/img/mint/btn-stripes.svg");
   background-size: 65.5px auto;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1418,7 +1418,7 @@ a {
   content: "";
   display: block;
   position: absolute;
-  top: calc(50% - 8px);
+  top: calc(50% - 2px);
   left: 18px;
   transform: translate(-50%, -50%);
   background: #fff;

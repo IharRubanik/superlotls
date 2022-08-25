@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+
   // scroll
   // const smoothLinks = document.querySelectorAll('a[href^="#"]');
   // for (let smoothLink of smoothLinks) {
