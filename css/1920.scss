@@ -8,13 +8,16 @@
 }
 @keyframes main-button {
   0% {
-    transform: translateY(30px);
+    // transform: translateY(30px);
+    margin-top: 245px;
   }
   50% {
-    transform: translateY(0);
+    // transform: translateY(0);
+    margin-top: 215px;
   }
   100% {
-    transform: translateY(30px);
+    // transform: translateY(30px);
+    margin-top: 245px;
   }
 }
 @keyframes top-arrow {
@@ -387,6 +390,7 @@ a {
           width: 216px;
           height: 216px;
           color: #ffffff;
+          transform: translate(-8px, -8px);
           img {
             filter: brightness(0) invert(1);
           }
@@ -812,12 +816,9 @@ a {
           align-items: center;
           justify-content: center;
           background: none;
-          transition: all 0.3s;
+          transition: 0.3s background, .3s border, .3s opacity;
           &.active {
             opacity: 0.2;
-            // img {
-            //   opacity: 0;
-            // }
             border: 1px solid #ffffff;
             &:not([disabled]):hover {
               background: none;
@@ -882,11 +883,17 @@ a {
             fill: white;
             width: 100%;
             height: auto;
-            transition: all 0.3s;
+            transition: .3s fill;
+            path{
+              transition: .3s fill;
+            }
           }
           &:hover {
             svg {
               fill: #ff66c4;
+              path{
+                fill:white;
+              }
             }
           }
         }
@@ -1067,6 +1074,11 @@ a {
 .btn {
   width: 248px;
   margin: 0 0 0 80px;
+  transition: .3s border-radius, .3s background, .3s color;
+  // transition: .3s all;
+  &:hover{
+    border-radius: 18px;
+  }
 }
 
 .waterway-maintitle {
@@ -1243,8 +1255,11 @@ a {
       color: #fff;
       text-decoration: none;
       opacity: 0.3;
-      transition: 1s font-size;
+      transition: 1s font-size, .3s opacity;
       outline: none;
+      &:hover{
+        opacity: 1;
+      }
       &.active {
         font-size: 68px;
         opacity: 1;
@@ -1291,12 +1306,13 @@ a {
       // margin: 0 0 52px 0;
       li {
         font-size: 24px;
-        line-height: calc(44 / 24);
+        line-height: 34px;
         font-family: "Oswald";
         font-weight: 300;
         opacity: 0.6;
         padding: 0 0 0 35px;
         position: relative;
+        margin-top: 15px;
         &::before {
           content: "";
           display: block;
@@ -1353,6 +1369,7 @@ a {
   transition: 0.3s max-height, 0.3s border-color;
   &:hover {
     border-color: #ff4cbd;
+
   }
   &.show {
     max-height: 300px;
@@ -1362,7 +1379,7 @@ a {
 .accordion-title {
   font-size: 26px;
   line-height: calc(36 / 26);
-  padding: 7px 0 24px 45px;
+  padding: 7px 0 12px 45px;
   position: relative;
   transition: 0.3s color;
   &:before,
@@ -1384,8 +1401,16 @@ a {
     width: 16px;
     height: 2px;
   }
+
   &:hover {
     cursor: pointer;
+    color: #ff4cbd;
+    &::before{
+      background: #ff4cbd;  
+    }
+    &:after{
+      background: #ff4cbd;
+    }
   }
   &.show {
     color: #ff4cbd;
@@ -1485,6 +1510,7 @@ footer {
 
   .socials {
     display: flex;
+    justify-content: space-between;
     gap: 40px;
     margin: 30px 0 80px 0;
     .btn {
@@ -1492,6 +1518,7 @@ footer {
       font-size: 28px;
       line-height: calc(41.5 / 28);
       padding: 29px 20px;
+      margin: 0;
       img {
         display: block;
         width: 30px;

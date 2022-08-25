@@ -16,24 +16,24 @@
 }
 @-webkit-keyframes main-button {
   0% {
-    transform: translateY(30px);
+    margin-top: 245px;
   }
   50% {
-    transform: translateY(0);
+    margin-top: 215px;
   }
   100% {
-    transform: translateY(30px);
+    margin-top: 245px;
   }
 }
 @keyframes main-button {
   0% {
-    transform: translateY(30px);
+    margin-top: 245px;
   }
   50% {
-    transform: translateY(0);
+    margin-top: 215px;
   }
   100% {
-    transform: translateY(30px);
+    margin-top: 245px;
   }
 }
 @-webkit-keyframes top-arrow {
@@ -466,6 +466,7 @@ a {
   width: 216px;
   height: 216px;
   color: #ffffff;
+  transform: translate(-8px, -8px);
 }
 .main .main__container .populacion-container .main-button:hover img {
   filter: brightness(0) invert(1);
@@ -882,7 +883,7 @@ a {
   align-items: center;
   justify-content: center;
   background: none;
-  transition: all 0.3s;
+  transition: 0.3s background, 0.3s border, 0.3s opacity;
 }
 .team .team__container .ridht-block .button-container .button.active {
   opacity: 0.2;
@@ -949,10 +950,16 @@ a {
   fill: white;
   width: 100%;
   height: auto;
-  transition: all 0.3s;
+  transition: 0.3s fill;
+}
+.team .team__container .ridht-block .social a svg path {
+  transition: 0.3s fill;
 }
 .team .team__container .ridht-block .social a:hover svg {
   fill: #ff66c4;
+}
+.team .team__container .ridht-block .social a:hover svg path {
+  fill: white;
 }
 
 .main-title {
@@ -1114,6 +1121,10 @@ a {
 .btn {
   width: 248px;
   margin: 0 0 0 80px;
+  transition: 0.3s border-radius, 0.3s background, 0.3s color;
+}
+.btn:hover {
+  border-radius: 18px;
 }
 
 .waterway-maintitle {
@@ -1280,8 +1291,11 @@ a {
   color: #fff;
   text-decoration: none;
   opacity: 0.3;
-  transition: 1s font-size;
+  transition: 1s font-size, 0.3s opacity;
   outline: none;
+}
+#waterway .waterway-tabs a:hover {
+  opacity: 1;
 }
 #waterway .waterway-tabs a.active {
   font-size: 68px;
@@ -1324,12 +1338,13 @@ a {
 }
 #waterway .waterway-texts ul li {
   font-size: 24px;
-  line-height: 1.8333333333;
+  line-height: 34px;
   font-family: "Oswald";
   font-weight: 300;
   opacity: 0.6;
   padding: 0 0 0 35px;
   position: relative;
+  margin-top: 15px;
 }
 #waterway .waterway-texts ul li::before {
   content: "";
@@ -1395,7 +1410,7 @@ a {
 .accordion-title {
   font-size: 26px;
   line-height: 1.3846153846;
-  padding: 7px 0 24px 45px;
+  padding: 7px 0 12px 45px;
   position: relative;
   transition: 0.3s color;
 }
@@ -1419,6 +1434,13 @@ a {
 }
 .accordion-title:hover {
   cursor: pointer;
+  color: #ff4cbd;
+}
+.accordion-title:hover::before {
+  background: #ff4cbd;
+}
+.accordion-title:hover:after {
+  background: #ff4cbd;
 }
 .accordion-title.show {
   color: #ff4cbd;
@@ -1511,6 +1533,7 @@ footer .faq .main-title {
 }
 .footer .socials {
   display: flex;
+  justify-content: space-between;
   gap: 40px;
   margin: 30px 0 80px 0;
 }
@@ -1519,6 +1542,7 @@ footer .faq .main-title {
   font-size: 28px;
   line-height: 1.4821428571;
   padding: 29px 20px;
+  margin: 0;
 }
 .footer .socials .btn img {
   display: block;
