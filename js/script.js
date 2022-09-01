@@ -189,22 +189,16 @@ document.addEventListener("DOMContentLoaded", function() {
       if (xDiff > 0) {
         /* left swipe */
         prevSlide();
-          // canvas1.classList.add('touch')
       } else {
         /* right swipe */
         nextSlide();
-        // canvas1.classList.add('touch')
       }
     } else {
       // Это вам, в общем-то, не надо, вы ведь только влево-вправо собираетесь двигать
       if (yDiff > 0) {
-        //   canvas1.classList.remove('touch')
-
-        // canvas1.classList.remove('touch')
         /* up swipe */
       } else {
         /* down swipe */
-        // canvas1.classList.remove('touch')
       }
     }
     /* reset values */
