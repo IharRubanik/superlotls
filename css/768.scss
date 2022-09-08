@@ -1,0 +1,196 @@
+@media only screen and (max-width:768px) {
+
+  .container {
+    width: 90.5vw;
+  }
+
+  .beginning {
+    height: 300vw;
+  }
+
+  .fade-wrapper {
+    // margin-top: -215vw;
+  }
+
+  .btn {
+    font-size: 18px;
+    width: 28.65vw;
+    padding: 2.7vw 6.5vw;
+    border-radius: 8px;
+    &::before,
+    &::after {
+      width: 54px;
+      height: 16px;
+      background-size: 54px auto;
+    }
+  }
+
+  .beginning {
+    height: 300vh;
+  }
+  .fade-wrapper {
+    margin-top: -220vh;
+  }
+
+  #mintwaterway {
+    height: 600vh;
+  }
+
+  #mint {
+    .container {
+      margin-top: 5.5vw;
+      width: 90.5vw;
+    }
+    .main-title {
+      font-size: 48px;
+      line-height: calc(68/48);
+      margin: 0 0 40px 0;
+    }
+    .main-text {
+      font-size: 24px;
+      line-height: calc(34/24);
+      width: 100%;
+      margin: 0 0 60px 0;
+    }
+    .anime-circle {
+      width: 97vw;
+      top: 36.5vw;
+      left: 12.25vw;
+      .wrapper-circle {
+        .character {
+          width: 68.5vw;
+        }
+      }
+    }
+  }
+  #waterway {
+    .waterway-tabs {
+      width: 45vw;
+      gap: 3.2vw;
+      a {
+        font-size: 24px;
+        &.active {
+          font-size: 48px;
+        }
+      }
+    }
+    .waterway-texts {
+      width: 44vw;
+      .waterway-title {
+        font-size: 42px;
+        margin-top: 10px;
+      }
+      ul {
+        li {
+          font-size: 20px;
+          margin-top: 10px;
+          padding: 0 0 0 3.8vw;
+          &::before {
+            width: 4px;
+            height: 4px;
+            top: 15px;
+            left: 1.5vw;
+          }
+        }
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+    .waterway-buble {
+      bottom: 55vw;
+      left: 15vw;
+    }
+    &.first {
+      .waterway-buble {
+        top: auto;
+        bottom: 55vw;
+        left: 15vw;
+      }
+    }
+  }
+  .waterway-maintitle {
+    font-size: 20px;
+    padding: 5px 12px;
+    border-radius: 8px;
+  }
+
+  footer {
+    .faq {
+      height: 1060px;
+      margin: 0 0 180px 0;
+      .main-title {
+        font-size: 48px;
+      }
+    }
+  }
+
+  .accordion-wrap {
+    flex-direction: column;
+  }
+
+  .accordion-item {
+    width: 100%;
+  }
+
+  .accordion-title {
+    font-size: 22px;
+    padding: 20px 20px 20px 40px;
+    &::before {
+      width: 2px;
+      height: 12px;
+    }
+    &::after {
+      width: 12px;
+      height: 2px;
+    }
+  }
+
+  .accordion-content {
+    font-size: 18px;
+  }
+
+  .footer {
+    .socials {
+      gap: 14px;
+      .btn {
+        font-size: 18px;
+        gap: 12px;
+        padding: 19px 22px;
+        img {
+          margin: 0;
+          width: 20px;
+        }
+        &::before,
+        &::after {
+          width: 16px;
+        }
+        &::before {
+          left: 0;
+        }
+        &::after {
+          right: 0;
+        }
+        > span {
+          &:nth-child(1) {
+            display: none;
+          }
+        }
+      }
+    }
+    .terms {
+      gap: 40px;
+      a {
+        font-size: 14px;
+      }
+    }
+    .powered {
+      a {
+        img {
+          width: 130px;
+        }
+      }
+    }
+  }
+
+}

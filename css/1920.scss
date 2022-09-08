@@ -1002,7 +1002,8 @@ a {
 }
 
 #mint {
-  background-color: #03010d;
+  display: flex;
+  background-color: #06000f;
   // position: sticky;
   // top: 0;
   // left: 0;
@@ -1015,6 +1016,7 @@ a {
   z-index: 9;
   .container {
     position: relative;
+    margin: auto;
     z-index: 1;
   }
   img.bg,
@@ -1088,7 +1090,7 @@ a {
   font-family: "Oswald";
   font-weight: 300;
   padding: 0.313vw 0.833vw 0.521vw;
-  border-width: 0vw 0.052vw;
+  border-width: 0vw 1px;
   border-style: solid;
   border-color: #ff4cbd;
   border-radius: 0.417vw;
@@ -1329,15 +1331,15 @@ a {
     }
     a {
       text-decoration: none;
-      border: 0.052vw solid #ff66c4;
+      border: 0.052vw solid #ff66c480;
       color: #ff66c4;
-      border: 0.052vw solid #ff66c4;
       border-radius: 0.417vw;
       width: 8.073vw;
       height: 1.875vw;
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      position: relative;
       span {
         margin: 0 0 0.208vw 0;
       }
@@ -1353,6 +1355,8 @@ a {
 
 .accordion {
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
   color: #fff;
@@ -1362,7 +1366,7 @@ a {
 
 .accordion-item {
   width: 34.375vw;
-  margin: 0 0 0.938vw 0;
+  // margin: 0 0 0.938vw 0;
   border-bottom: 0.052vw solid rgba(255, 255, 255, 0.15);
   user-select: none;
   overflow: hidden;
@@ -1372,14 +1376,14 @@ a {
     border-color: #ff4cbd;
   }
   &.show {
-    max-height: 15.625vw;
+    max-height: 15.625vw!important;
   }
 }
 
 .accordion-title {
   font-size: 1.354vw;
   line-height: calc(36 / 26);
-  padding: 0.365vw 0 0.625vw 2.344vw;
+  padding: 0.915vw 0 1.175vw 2.344vw;
   position: relative;
   transition: 0.3s color;
   &:before,
@@ -1465,7 +1469,7 @@ footer {
     .main-title {
       text-align: center;
       text-transform: uppercase;
-      margin: 0 0 3.281vw 0;
+      margin: 0 0 2.2vw 0;
       z-index: 1;
     }
   }
@@ -1502,6 +1506,7 @@ footer {
     }
     > img {
       margin: 0 0 0 10.677vw;
+      width: 24.896vw;
     }
   }
   .f-main-title {

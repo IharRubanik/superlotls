@@ -1,0 +1,38 @@
+@media only screen and (max-width:600px) {
+
+  .container {
+    width: 89.333vw;
+  }
+
+  #mint {
+    .container {
+      height: 100%;
+      margin-top: auto;
+    }
+    .btn {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translate(-50%,0);
+      font-size: 18px;
+      line-height: calc(26.68/18);
+      width: 220px;
+    }
+    .main-title {
+      font-size: 38px;
+      line-height: calc(58/38);
+      margin: 0 0 20px 0;
+    }
+    .main-text {
+      font-size: 20px;
+      line-height: calc(30/20);
+    }
+  }
+
+  .footer {
+    .socials {
+      flex-direction: column;
+    }
+  }
+
+}
