@@ -1,4 +1,326 @@
-@media only screen and (max-width:768px) {
+@media only screen and (max-width:860px) {
+
+  .container {
+    width: 688px;
+  }
+  .main {
+    padding: 30px 40px 0 40px;
+    background-position: center -60px;
+    .main__background {
+      display: none;
+    }
+    .top-smoke {
+      width: 1092.27px;
+      height: 803.205px;
+      left: -341.605px;
+      top: 120.28px;
+    }
+    .buttom-smoke {
+      width: 548.803px;
+      height: 349.338px;
+      left: -22.8px;
+      top: 489.548px;
+    }
+    .right-smoke {
+      width: 668.33px;
+      height: 501.005px;
+      left: 109.935px;
+      top: 119.452px;
+    }
+    .water {
+      bottom: -110.002px;
+      background-size: 2800.005px 472.003px;
+      width: 5600px;
+      height: 472.003px;
+      animation: 15s water1024 linear infinite;
+    }
+    .water-blur1 {
+      height: 400px;
+    }
+    .header {
+      .header__logo {
+        width: 190.003px;
+      }
+      .header__right-block {
+        gap: 39.997px;
+        .header__nav {
+          display: none;
+        }
+        .header__button {
+          width: 144.998px;
+          height: 39.997px;
+          font-size: 15.002px;
+          line-height: 21.996px;
+          border-radius: 8px;
+          .left-blok,
+          .right-block {
+            width: 9.001px;
+            gap: 4.997px;
+            span {
+              height: 1.997px;
+            }
+          }
+          &:hover {
+            border-radius: 18px;
+          }
+        }
+      }
+    }
+    .main__container {
+      height: 100%;
+      .main-title {
+        font-size: 33.997px;
+        line-height: 44.001px;
+        width: 664.996px;
+        bottom: 34.5vh;
+      }
+      .main-subtitle {
+        bottom: 18vh;
+        width: 300px;
+        left: 67px;
+        font-size: 25.999px;
+        line-height: 36.004px;
+        a {
+          border-radius: 6.769px;
+          padding: 0 4.997px;
+          border: 1.004px solid #ff66c4;
+          height: 30.003px;
+        }
+      }
+      .populacion-container {
+        bottom: 61vh;
+        .main-populacion {
+          font-size: 51.999px;
+          line-height: 62.003px;
+          gap: 15.002px;
+          span {
+            font-size: 19.999px;
+            line-height: 30.003px;
+            border-radius: 7.997px;
+            border-left: 1.004px solid #ff66c4;
+            border-right: 1.004px solid #ff66c4;
+            padding: 0 13.005px;
+            height: 39.997px;
+          }
+        }
+        strong {
+          margin: 21.002px 0 0 0;
+          font-size: 19.999px;
+          line-height: 30.003px;
+          width: 330.004px;
+        }
+        .main-button {
+          bottom: -47.5vh;
+          margin: 0;
+          width: 179.999px;
+          height: 179.999px;
+          font-size: 18.002px;
+          line-height: 27.003px;
+          img {
+            bottom: 36.004px;
+            width: 27.996px;
+          }
+          &:hover {
+            width: 199.997px;
+            height: 199.997px;
+            transform: translate(10.004px, -10.004px);
+          }
+        }
+      }
+    }
+  }
+  .beginning {
+    .water-blur {
+      top: -10%;
+    }
+    .bubbles1 {
+      width: 48.998px;
+    }
+    .bubbles2 {
+      width: 76.001px;
+    }
+    .bubbles3 {
+      width: 45.005px;
+    }
+    .bubbles4 {
+      width: 47.002px;
+    }
+    .beginning__container {
+      transform: translateY(-24%);
+      .beginning__slider {
+        width: 437.996px;
+        height: 437.996px;
+        &::before {
+          height: 7.997px;
+          width: 7.997px;
+          border-left: 2px solid #ffffff;
+          border-bottom: 2px solid #ffffff;
+        }
+        &::after {
+          height: 7.997px;
+          width: 7.997px;
+          border-left: 2px solid #ffffff;
+          border-bottom: 2px solid #ffffff;
+        }
+        .circl-background {
+          width: 437.996px;
+          height: 437.996px;
+          background-size: 437.996px 437.996px;
+        }
+        .triangle {
+          width: 332.001px;
+        }
+        .gif {
+          width: 275.999px;
+        }
+        .circl {
+          width: 86.999px;
+          height: 86.999px;
+          font-size: 15.749px;
+          line-height: 22.999px;
+        }
+      }
+      .beginning__right-block {
+        position: absolute;
+        right: 32px;
+        top: 5px;
+
+        h2 {
+          position: relative;
+          font-size: 48.005px;
+          line-height: 68.004px;
+          gap: 15.002px;
+
+          span {
+            position: absolute;
+            right: -32px;
+            top: 0;
+            margin: 18.002px 0 0 0;
+            padding: 0 13.005px;
+            font-size: 19.999px;
+            line-height: 30.003px;
+            border-radius: 7.997px;
+            width: auto;
+            height: 39.997px;
+          }
+        }
+        strong {
+          top: 194%;
+          margin: 0 0 0 38px;
+          font-size: 24.003px;
+          line-height: 33.997px;
+          width: 287px;
+          letter-spacing: 0.025em;
+          span {
+            margin: 8.008px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+  .team {
+    padding: 0;
+    .team-background {
+      left: -53.004px;
+      top: -34.998px;
+    }
+    .slider {
+      width: 50%;
+      .slider-wrapper {
+        height: 449.997px;
+        .slide {
+          width: 350.003px;
+          top: 89px;
+          &.active {
+            width: 286.996px;
+            left: 28.4%;
+          }
+          &.centr {
+            opacity: 0;
+            width: 0;
+            left: -50%;
+            top: 50%;
+          }
+          &.none {
+            transform: translateY(-110%);
+            left: 65%;
+          }
+        }
+      }
+    }
+    .capsule {
+      width: 434.606px;
+      height: 568.32px;
+      transform: translate(-79%, -38%);
+      video {
+        width: 219.771px;
+        height: 475.648px;
+      }
+      &::before {
+        width: 248.474px;
+        height: 442.849px;
+      }
+      &::after {
+        width: 434.606px;
+        height: 568.32px;
+      }
+    }
+    .team__container {
+      top: 14%;
+      .team__title {
+        font-size: 48.005px;
+        line-height: 68.004px;
+      }
+      .ridht-block {
+        margin: 127px 0 0 0;
+        .button-container {
+          gap: 10.004px;
+          .button {
+            width: 65.997px;
+            height: 27.996px;
+            border: 1.004px solid #ffffff;
+            border-radius: 6.564px;
+            &.active {
+              border: 1px solid #ffffff;
+            }
+            &:hover {
+              border: 1.004px solid #ff66c4;
+            }
+            img {
+              width: 46.203px;
+            }
+          }
+        }
+        span {
+          margin: 85.996px 0 0 0;
+          font-size: 25.999px;
+          line-height: 30.003px;
+        }
+        strong {
+          margin: 4.997px 0 0 0;
+          font-size: 21.996px;
+          line-height: 33.004px;
+          letter-spacing: -0.03em;
+        }
+        p {
+          margin: 16.005px 0 0 0;
+          font-size: 18.002px;
+          line-height: 27.996px;
+          width: 288px;
+        }
+        .social {
+          margin: 27.996px 0 0 0;
+          gap: 12.001px;
+          a {
+            width: 39.997px;
+            height: 39.997px;
+          }
+        }
+      }
+    }
+  }
+
+  /*---*/
 
   .container {
     width: 90.5vw;
