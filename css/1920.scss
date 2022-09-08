@@ -98,7 +98,6 @@ a {
 .wrapper {
   width: 100%;
   height: auto;
-  // overflow: clip;
   background-color: #0d4b9e;
 }
 .container {
@@ -221,7 +220,6 @@ a {
         height: 2.292vw;
         transition: all 0.3s;
         .left-blok {
-          width: 100%;
           position: absolute;
           left: 0;
           top: 50%;
@@ -239,7 +237,6 @@ a {
           }
         }
         .right-block {
-          width: 100%;
           position: absolute;
           right: 0;
           top: 50%;
@@ -300,7 +297,6 @@ a {
       z-index: 3;
       a {
         text-decoration: none;
-        border: 0.052vw solid #ff66c4;
         color: #ff66c4;
         border: 0.052vw solid #ff66c4;
         border-radius: 0.417vw;
@@ -460,7 +456,6 @@ a {
       animation: 1.5s bubbles1 linear;
     }
   }
-
   .bubbles2 {
     position: absolute;
     opacity: 0;
@@ -747,7 +742,6 @@ a {
     transform: translate(-50%, -39%);
     width: 27.604vw;
     height: 36.094vw;
-
     video {
       position: absolute;
       left: 50%;

@@ -296,7 +296,6 @@ a {
   transition: all 0.3s;
 }
 .main .header .header__right-block .header__button .left-blok {
-  width: 100%;
   position: absolute;
   left: 0;
   top: 50%;
@@ -314,7 +313,6 @@ a {
   height: 0.104vw;
 }
 .main .header .header__right-block .header__button .right-block {
-  width: 100%;
   position: absolute;
   right: 0;
   top: 50%;
@@ -374,7 +372,6 @@ a {
 }
 .main .main__container .main-subtitle a {
   text-decoration: none;
-  border: 0.052vw solid #ff66c4;
   color: #ff66c4;
   border: 0.052vw solid #ff66c4;
   border-radius: 0.417vw;
