@@ -423,7 +423,7 @@
       .waterway-title {
         font-size: 4.102vw;
         line-height: calc(52/42);
-        margin-top: 10px;
+        margin: 0 0 10px 0;
       }
       p {
         font-size: 2.344vw;
@@ -485,7 +485,7 @@
   .accordion-item {
     width: 44.141vw;
     &.show {
-      max-height: 35.625vw!important;
+      max-height: 350px!important;
     }
   }
 

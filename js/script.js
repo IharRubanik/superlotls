@@ -248,114 +248,116 @@ document.addEventListener("DOMContentLoaded", function() {
       waterwayText = document.querySelector('.waterway-texts'),
       waterwayTab = document.querySelectorAll('.waterway-tab');
 
-    let mintWaterwayPercScroll = 0,
-    num = 0,
-    numOld = 0;
+    if (screen.width >= 600) {
+      let mintWaterwayPercScroll = 0,
+      num = 0,
+      numOld = 0;
 
-    waterwayTabs.forEach((el,i) => el.addEventListener('click', function(e) {
-    e.preventDefault();
+      waterwayTabs.forEach((el,i) => el.addEventListener('click', function(e) {
+      e.preventDefault();
 
-    waterwayTab.forEach(el => el.classList.remove('active'));
-    waterwayTab[i].classList.add('active');
+      waterwayTab.forEach(el => el.classList.remove('active'));
+      waterwayTab[i].classList.add('active');
 
-    const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
+      const range = document.querySelector(`#waterway-text-${i+1}`).offsetTop - waterwayText.offsetTop - 1;
 
-    window.scrollTo({
-    top: mintWaterwaySection.offsetTop + (mintWaterwaySection.clientHeight/6) * (i + 2),
-    })
+      window.scrollTo({
+      top: mintWaterwaySection.offsetTop + (mintWaterwaySection.clientHeight/6) * (i + 2),
+      })
 
-    waterwayText.scrollTo({
-    top: range,
-    behavior: "smooth"
-    });
+      waterwayText.scrollTo({
+      top: range,
+      behavior: "smooth"
+      });
 
-    }))
+      }))
 
-    let beginningOpacity = 0;
+      let beginningOpacity = 0;
 
-    window.addEventListener('scroll', function() {
+      window.addEventListener('scroll', function() {
 
-    mintWaterwayPercScroll = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
-    beginningPercScroll = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
+      mintWaterwayPercScroll = (-1 * mintWaterwaySection.getBoundingClientRect().y/ (mintWaterwaySection.clientHeight/100));
+      beginningPercScroll = (-1 * beginningSection.getBoundingClientRect().y/ (beginningSection.clientHeight/100));
 
-    mintWaterwayHeight = mintWaterwaySection.clientHeight;
-    mintWaterwayScroll = window.pageYOffset - mintWaterwaySection.offsetTop;
+      mintWaterwayHeight = mintWaterwaySection.clientHeight;
+      mintWaterwayScroll = window.pageYOffset - mintWaterwaySection.offsetTop;
 
-    mintWaterwayScroll < 3 * (mintWaterwayHeight / 6) - 300 ?
-    (num = 1) :
-    mintWaterwayScroll < 4 * (mintWaterwayHeight / 6) - 300 ?
-    (num = 2) :
-    mintWaterwayScroll < 5 * (mintWaterwayHeight / 6) - 300 ?
-    (num = 3) : (num = 4);
+      mintWaterwayScroll < 3 * (mintWaterwayHeight / 6) - 300 ?
+      (num = 1) :
+      mintWaterwayScroll < 4 * (mintWaterwayHeight / 6) - 300 ?
+      (num = 2) :
+      mintWaterwayScroll < 5 * (mintWaterwayHeight / 6) - 300 ?
+      (num = 3) : (num = 4);
 
-    if (beginningPercScroll < 26) {
-    beginningOpacity = 1;
-    } else if (beginningPercScroll >= 26 && beginningPercScroll <= 46) {
-
-    beginningOpacity = (46 - beginningPercScroll)/20;
-    mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)/20);
-
-    if (beginningOpacity <= 0.05) {
-      beginningOpacity = 0;
-    }
-    if (beginningOpacity >= 0.95) {
+      if (beginningPercScroll < 26) {
       beginningOpacity = 1;
-    }
+      } else if (beginningPercScroll >= 26 && beginningPercScroll <= 46) {
 
-    } else if (beginningPercScroll > 46) {
-    beginningOpacity = 0;
-    }
+      beginningOpacity = (46 - beginningPercScroll)/20;
+      mintWaterwayOpacity = (-1 * (28 - beginningPercScroll)/20);
 
-    beginningOpacity > 0 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
-    beginningSection.style.opacity = beginningOpacity;
+      if (beginningOpacity <= 0.05) {
+        beginningOpacity = 0;
+      }
+      if (beginningOpacity >= 0.95) {
+        beginningOpacity = 1;
+      }
 
-    if (beginningPercScroll > 10) {
-    beginningBg.style.transform = `scale(${Math.round(beginningPercScroll)/10})`;
-    } else {
-    beginningBg.style.transform = `scale(1)`;
-    }
+      } else if (beginningPercScroll > 46) {
+      beginningOpacity = 0;
+      }
 
-    if (beginningPercScroll > 14) {
-    beginningContainer.classList.add('remove')
-    } else {
-    beginningContainer.classList.remove('remove')
-    }
+      beginningOpacity > 0 ? beginningSection.style.zIndex = 9 : beginningSection.style.zIndex = -1;
+      beginningSection.style.opacity = beginningOpacity;
 
-    if (mintWaterwayPercScroll < 10) {
-    document.querySelector('.mint-test').style.transform = `translate(${0}vw,0)`
-    } else if (mintWaterwayPercScroll >= 10 && mintWaterwayPercScroll <= 30) {
+      if (beginningPercScroll > 10) {
+      beginningBg.style.transform = `scale(${Math.round(beginningPercScroll)/10})`;
+      } else {
+      beginningBg.style.transform = `scale(1)`;
+      }
 
-    document.querySelector('.mint-test').style.transform = `translate(${-((mintWaterwayPercScroll - 10)/20) * 100}vw,0)`
-    } else if (mintWaterwayPercScroll > 30) {
-    document.querySelector('.mint-test').style.transform = `translate(${-100}vw,0)`
-    }
+      if (beginningPercScroll > 14) {
+      beginningContainer.classList.add('remove')
+      } else {
+      beginningContainer.classList.remove('remove')
+      }
 
-    if (num === 1) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('first');
-    }
-    if (num === 2) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('second');
-    }
-    if (num === 3) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('third');
-    }
-    if (num === 4) {
-      waterwaySection.classList = '';
-      waterwaySection.classList.add('four');
-    }
+      if (mintWaterwayPercScroll < 10) {
+      document.querySelector('.mint-test').style.transform = `translate(${0}vw,0)`
+      } else if (mintWaterwayPercScroll >= 10 && mintWaterwayPercScroll <= 30) {
 
-    if (num !== numOld) {
-      numOld = num;
-      waterwayTabs[num - 1].click();
-    }
+      document.querySelector('.mint-test').style.transform = `translate(${-((mintWaterwayPercScroll - 10)/20) * 100}vw,0)`
+      } else if (mintWaterwayPercScroll > 30) {
+      document.querySelector('.mint-test').style.transform = `translate(${-100}vw,0)`
+      }
 
-    })
+      if (num === 1) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('first');
+      }
+      if (num === 2) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('second');
+      }
+      if (num === 3) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('third');
+      }
+      if (num === 4) {
+        waterwaySection.classList = '';
+        waterwaySection.classList.add('four');
+      }
+
+      if (num !== numOld) {
+        numOld = num;
+        waterwayTabs[num - 1].click();
+      }
+
+      })
+    }
 
   }
-
+  fadeTransition();
   // Accordion
   const accordionItem = document.querySelectorAll('.accordion-item'),
         accordionTitle = document.querySelectorAll('.accordion-title');
@@ -385,9 +387,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   window.addEventListener('resize', function() {
     accordionItemSize();
-    if (screen.width >= 600) {
-      fadeTransition();
-    }
+    fadeTransition();
   });
 
 });

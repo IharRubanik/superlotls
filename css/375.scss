@@ -1,6 +1,6 @@
 @media only screen and (max-width:600px) {
 
-  
+
 
   /*---*/
 
@@ -8,14 +8,114 @@
     width: 89.333vw;
   }
 
+  .fade-wrapper {
+    margin-top: 0;
+  }
+
+  .mint-test {
+    width: 100vw;
+    flex-direction: column;
+  }
+
+  #mintwaterway {
+    height: auto;
+    #mint-waterway-wrap {
+      position: static;
+      height: auto;
+    }
+  }
+
+  #waterway {
+    height: auto;
+    width: 100vw;
+    #waterway-bg {
+      z-index: 1;
+    }
+    .container {
+      flex-direction: column;
+    }
+    .waterway-tabs {
+      display: none;
+    }
+    .waterway-texts {
+      width: 100%;
+      height: auto;
+      #waterway-text-1,
+      #waterway-text-2,
+      #waterway-text-3,
+      #waterway-text-4 {
+        height: auto;
+        margin: 0 0 120px 0;
+      }
+      .hidden-title {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 38px;
+        line-height: calc(58/38);
+        font-family: "Wild World";
+        font-weight: 500;
+        margin: 0 0 30px 0;
+        .waterway-maintitle {
+          font-size: 16px;
+          border-width: 0 1px;
+          border-radius: 8px;
+          padding: 5px 12px;
+        }
+      }
+      .waterway-title {
+        font-size: 34px;
+        line-height: calc(44/34);
+      }
+      ul {
+        li {
+          font-size: 18px;
+          line-height: calc(28/18);
+          padding: 0 0 0 7.8vw;
+          margin-top: 5px;
+          &::before {
+            left: 3.4vw;
+          }
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: calc(30/20);
+        margin-top: 15px;
+      }
+      a {
+        width: 27.6vw;
+        height: 6.8vw;
+        border-width: 1px;
+        border-radius: 6px;
+      }
+    }
+  }
+
   #mint {
+    img.bg {
+      top: -18.75vw;
+      left: -3.25vw;
+      width: 125vw;
+    }
+    .anime-circle {
+      top: auto;
+      bottom: -3.5vw;
+      left: -23.75vw;
+      width: 140vw;
+      .wrapper-circle {
+        .character {
+          width: 98.5vw;
+        }
+      }
+    }
     .container {
       height: 100%;
       margin-top: auto;
     }
     .btn {
       position: absolute;
-      bottom: 40px;
+      bottom: 0;
       left: 50%;
       transform: translate(-50%,0);
       font-size: 18px;
@@ -33,9 +133,73 @@
     }
   }
 
+  footer {
+    .footer-light {
+      width: 175vw;
+      left: -28vw;
+      top: -4vw;
+    }
+
+    .faq {
+      .main-title {
+        font-size: 38px;
+        line-height: calc(58/38);
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+
+  .accordion-title {
+    font-size: 20px;
+    line-height: calc(30/20);
+    padding: 17px 20px 17px 38px;
+    &::before {
+      width: 2px;
+      height: 12px;
+      left: 16px;
+    }
+    &::after {
+      width: 12px;
+      height: 2px;
+      left: 16px;
+    }
+  }
+
   .footer {
+    padding: 0 0 48px 0;
+    .faq {
+      height: auto;
+    }
+    .f-main-title {
+      font-size: 25px;
+      line-height: 1;
+    }
+    .join-bot {
+      margin: 0 0 5px 0;
+      > span {
+        font-size: 33px;
+        line-height: calc(49/33);
+      }
+    }
     .socials {
       flex-direction: column;
+      margin: 0 0 36px 0;
+      gap: 15px;
+      .btn {
+        font-size: 16px;
+        gap: 12px;
+        padding: 15px 22px;
+        img {
+          width: 20px;
+        }
+      }
+    }
+    .terms {
+      gap: 30px;
+      margin: 0 0 26px 0;
+      a {
+        font-size: 12px;
+      }
     }
   }
 

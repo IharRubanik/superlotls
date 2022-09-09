@@ -1270,6 +1270,9 @@ a {
     color: #fff;
     z-index: 6;
     // overflow-y: scroll;
+    .hidden-text {
+      display: none;
+    }
     .text-accent {
       color: #ff4cbd;
     }
