@@ -1,4 +1,24 @@
 @media only screen and (max-width:860px) {
+  @keyframes water1024 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2800px);
+    }
+  }
+  @keyframes main-button768 {
+    0% {
+      margin-bottom: 0vw;
+    }
+    50% {
+      margin-bottom: 30px;
+    }
+    100% {
+      margin-bottom: 0vw;
+    }
+  }
+
 
   .container {
     width: 688px;
@@ -35,6 +55,7 @@
       animation: 15s water1024 linear infinite;
     }
     .water-blur1 {
+
       height: 400px;
     }
     .header {
@@ -116,6 +137,7 @@
           height: 179.999px;
           font-size: 18.002px;
           line-height: 27.003px;
+          animation: main-button768 3s linear infinite;
           img {
             bottom: 36.004px;
             width: 27.996px;
@@ -131,7 +153,7 @@
   }
   .beginning {
     .water-blur {
-      top: -10%;
+      top: -4%;
     }
     .bubbles1 {
       width: 48.998px;
@@ -330,9 +352,9 @@
     height: 300vw;
   }
 
-  .fade-wrapper {
-    // margin-top: -215vw;
-  }
+  // .fade-wrapper {
+  //   // margin-top: -215vw;
+  // }
 
   .btn {
     font-size: 18px;
