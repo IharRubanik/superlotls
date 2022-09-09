@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-
+ const mediaQuery = window.matchMedia('only screen and (max-width: 600px)');
   // scroll
   // const smoothLinks = document.querySelectorAll('a[href^="#"]');
   // for (let smoothLink of smoothLinks) {
@@ -13,16 +13,36 @@ document.addEventListener("DOMContentLoaded", function() {
   //   });
   // }
 
-  const letsSwim = document.querySelector('.main-button'); 
+  // const letsSwim = document.querySelector('.main-button'); 
+  // letsSwim.addEventListener('click', function(e) {
+  //   e.preventDefault();
+  //   window.scrollTo({ 
+  //     top: document.querySelector('#beginning').offsetTop,
+  //     behavior: "smooth"
+  //   })
+  // })
 
+
+  const letsSwim = document.querySelector('.main-button');
+  let elemScroll;
+  
+  if (mediaQuery.matches) {
+    letsSwim.href = ('#beginning__right-block');
+    elemScroll = document.querySelector('#beginning__right-block')
+  }
+  else{
+    letsSwim.href = ('#beginning');
+    elemScroll = document.querySelector('#beginning')
+  }
   letsSwim.addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({
-      top: document.querySelector('#beginning').offsetTop,
-      behavior: "smooth"
+      top: elemScroll.offsetTop,
+      behavior: "smooth",
     })
 
   })
+ 
 
   let circlBackground = document.querySelector(".circl-background");
   let circl2 = document.querySelector(".top");
@@ -32,18 +52,29 @@ document.addEventListener("DOMContentLoaded", function() {
   let sliderText2 = document.querySelector(".slider-text2");
   let sliderText3 = document.querySelector(".slider-text3");
   let rotate = 0;
+ 
 
   circl2.onclick = function () {
     sliderText2.classList.add("active");
     sliderText1.classList.remove("active");
     sliderText3.classList.remove("active");
     if (this.classList.contains("top")) {
-      rotatePlus();
+      if (mediaQuery.matches) {
+        rotateMinus()
+      }
+      else{
+        rotatePlus()
+      }
       this.classList.replace("top", "active");
       circl1.classList.replace("active", "left");
       circl3.classList.replace("left", "top");
     } else if (this.classList.contains("left")) {
-      rotateMinus();
+      if (mediaQuery.matches) {
+        rotatePlus()
+      }
+      else{
+        rotateMinus()
+      }
       this.classList.replace("left", "active");
       circl3.classList.replace("active", "top");
       circl1.classList.replace("top", "left");
@@ -54,12 +85,22 @@ document.addEventListener("DOMContentLoaded", function() {
     sliderText2.classList.remove("active");
     sliderText3.classList.remove("active");
     if (this.classList.contains("left")) {
-      rotateMinus();
+      if (mediaQuery.matches) {
+        rotatePlus()
+      }
+      else{
+        rotateMinus()
+      }
       this.classList.replace("left", "active");
       circl2.classList.replace("active", "top");
       circl3.classList.replace("top", "left");
     } else if (this.classList.contains("top")) {
-      rotatePlus();
+      if (mediaQuery.matches) {
+        rotateMinus()
+      }
+      else{
+        rotatePlus()  
+      }
       this.classList.replace("top", "active");
       circl2.classList.replace("left", "top");
       circl3.classList.replace("active", "left");
@@ -70,12 +111,22 @@ document.addEventListener("DOMContentLoaded", function() {
     sliderText2.classList.remove("active");
     sliderText1.classList.remove("active");
     if (this.classList.contains("left")) {
-      rotateMinus();
+      if (mediaQuery.matches) {
+        rotatePlus()
+      }
+      else{
+        rotateMinus()
+      }
       this.classList.replace("left", "active");
       circl2.classList.replace("top", "left");
       circl1.classList.replace("active", "top");
     } else if (this.classList.contains("top")) {
-      rotatePlus();
+      if (mediaQuery.matches) {
+        rotateMinus()
+      }
+      else{
+        rotatePlus()  
+      }
       this.classList.replace("top", "active");
       circl2.classList.replace("active", "left");
       circl1.classList.replace("left", "top");
@@ -391,3 +442,5 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+
+
