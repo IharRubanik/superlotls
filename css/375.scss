@@ -8,9 +8,7 @@
     }
   }
 
-<<<<<<< HEAD
 
-=======
   @keyframes main-button375 {
     0% {
       margin-top: 0vw;
@@ -417,7 +415,6 @@
       }
     }
   }
->>>>>>> 573f566a4ccf56548a918bd163def2aba1b9e22e
 
   /*---*/
 
@@ -548,7 +545,6 @@
       }
     }
     .container {
-<<<<<<< HEAD
       height: 100%;
       margin-top: auto;
     }
@@ -560,10 +556,8 @@
       font-size: 18px;
       line-height: calc(26.68/18);
       width: 220px;
-=======
       margin-top: 5.5vw;
       width: 90.5vw;
->>>>>>> 573f566a4ccf56548a918bd163def2aba1b9e22e
     }
     .main-title {
       font-size: 48px;
@@ -599,7 +593,7 @@
       }
     }
     .waterway-texts {
-      width: 44vw;
+      width: 100%;
       .waterway-title {
         font-size: 42px;
         margin-top: 10px;
@@ -670,7 +664,6 @@
     }
   }
 
-<<<<<<< HEAD
   footer {
     .footer-light {
       width: 175vw;
@@ -701,10 +694,9 @@
       height: 2px;
       left: 16px;
     }
-=======
+  }
   .accordion-content {
     font-size: 18px;
->>>>>>> 573f566a4ccf56548a918bd163def2aba1b9e22e
   }
 
   .footer {
@@ -724,7 +716,6 @@
       }
     }
     .socials {
-<<<<<<< HEAD
       flex-direction: column;
       margin: 0 0 36px 0;
       gap: 15px;
@@ -742,7 +733,6 @@
       margin: 0 0 26px 0;
       a {
         font-size: 12px;
-=======
       gap: 14px;
       .btn {
         font-size: 18px;
@@ -773,7 +763,6 @@
       gap: 40px;
       a {
         font-size: 14px;
->>>>>>> 573f566a4ccf56548a918bd163def2aba1b9e22e
       }
     }
     .powered {
@@ -815,4 +804,5 @@
   .socials {
     flex-direction: column;
   }
+}
 }
