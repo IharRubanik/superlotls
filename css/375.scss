@@ -463,8 +463,21 @@
   #waterway {
     height: auto;
     width: 100vw;
+    background-image: url('/img/waterway/waterway-bg-mob.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
     #waterway-bg {
       z-index: 1;
+      display: none;
+    }
+    #waterway-blur {
+      border: 1px solid red;
+      z-index: 999;
+      width: 100%;
+      height: 100px;
+      opacity: 1!important;
+      bottom: -20px;
     }
     .container {
       flex-direction: column;
@@ -475,12 +488,40 @@
     .waterway-texts {
       width: 100%;
       height: auto;
+      position: relative;
+      z-index: 9;
+      padding: 200px 0 0 0;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center center;
+        z-index: -1;
+      }
+      &::before {
+        width: 230px;
+        height: 230px;
+        background-image: url('/img/waterway/bubble.png');
+        background-size: 225px auto;
+        top: 88px;
+        right: 0px;
+      }
+      &::after {
+        width: 167px;
+        height: 167px;
+        background-image: url('/img/waterway/axolots.gif');
+        background-size: 167px auto;
+        top: 120px;
+        right: 20px;
+      }
       #waterway-text-1,
       #waterway-text-2,
       #waterway-text-3,
       #waterway-text-4 {
         height: auto;
-        margin: 0 0 120px 0;
+        margin: 0 0 105px 0;
       }
       .hidden-title {
         display: flex;
@@ -527,106 +568,61 @@
     }
   }
 
-  #mint {
-    img.bg {
-      top: -18.75vw;
-      left: -3.25vw;
-      width: 125vw;
-    }
-    .anime-circle {
-      top: auto;
-      bottom: -3.5vw;
-      left: -23.75vw;
-      width: 140vw;
-      .wrapper-circle {
-        .character {
-          width: 98.5vw;
-        }
-      }
-    }
-    .container {
-      height: 100%;
-      margin-top: auto;
-    }
-    .btn {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%,0);
-      font-size: 18px;
-      line-height: calc(26.68/18);
-      width: 220px;
-      margin-top: 5.5vw;
-      width: 90.5vw;
-    }
-    .main-title {
-      font-size: 48px;
-      line-height: calc(68 / 48);
-      margin: 0 0 40px 0;
-    }
-    .main-text {
-      font-size: 24px;
-      line-height: calc(34 / 24);
-      width: 100%;
-      margin: 0 0 60px 0;
-    }
-    .anime-circle {
-      width: 97vw;
-      top: 36.5vw;
-      left: 12.25vw;
-      .wrapper-circle {
-        .character {
-          width: 68.5vw;
-        }
-      }
-    }
-  }
-  #waterway {
-    .waterway-tabs {
-      width: 45vw;
-      gap: 3.2vw;
-      a {
-        font-size: 24px;
-        &.active {
-          font-size: 48px;
-        }
-      }
-    }
-    .waterway-texts {
-      width: 100%;
-      .waterway-title {
-        font-size: 42px;
-        margin-top: 10px;
-      }
-      ul {
-        li {
-          font-size: 20px;
-          margin-top: 10px;
-          padding: 0 0 0 3.8vw;
-          &::before {
-            width: 4px;
-            height: 4px;
-            top: 15px;
-            left: 1.5vw;
-          }
-        }
-      }
-      p {
-        font-size: 24px;
-      }
-    }
-    .waterway-buble {
-      bottom: 55vw;
-      left: 15vw;
-    }
-    &.first {
-      .waterway-buble {
-        top: auto;
-        bottom: 55vw;
-        left: 15vw;
-      }
-    }
-  }
+  // #mint {
+  //   img.bg {
+  //     top: -18.75vw;
+  //     left: -3.25vw;
+  //     width: 125vw;
+  //   }
+  //   .anime-circle {
+  //     top: auto;
+  //     bottom: -3.5vw;
+  //     left: -23.75vw;
+  //     width: 140vw;
+  //     .wrapper-circle {
+  //       .character {
+  //         width: 98.5vw;
+  //       }
+  //     }
+  //   }
+  //   .container {
+  //     height: 100%;
+  //     margin-top: auto;
+  //   }
+  //   .btn {
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 50%;
+  //     transform: translate(-50%,0);
+  //     font-size: 18px;
+  //     line-height: calc(26.68/18);
+  //     width: 220px;
+  //     margin-top: 5.5vw;
+  //     width: 90.5vw;
+  //   }
+  //   .main-title {
+  //     font-size: 48px;
+  //     line-height: calc(68 / 48);
+  //     margin: 0 0 40px 0;
+  //   }
+  //   .main-text {
+  //     font-size: 24px;
+  //     line-height: calc(34 / 24);
+  //     width: 100%;
+  //     margin: 0 0 60px 0;
+  //   }
+  //   .anime-circle {
+  //     width: 97vw;
+  //     top: 36.5vw;
+  //     left: 12.25vw;
+  //     .wrapper-circle {
+  //       .character {
+  //         width: 68.5vw;
+  //       }
+  //     }
+  //   }
+  // }
+
   .waterway-maintitle {
     font-size: 20px;
     padding: 5px 12px;
@@ -776,17 +772,34 @@
 }
 
 #mint {
+  img.bg {
+    top: -18.75vw;
+    left: -3.25vw;
+    width: 125vw;
+  }
+  .anime-circle {
+    top: auto;
+    bottom: 39.5vw;
+    left: -22.75vw;
+    width: 140vw;
+    .wrapper-circle {
+      .character {
+        width: 98.5vw;
+      }
+    }
+  }
   .container {
     height: 100%;
     margin-top: auto;
   }
   .btn {
     position: absolute;
-    bottom: 40px;
+    bottom: 90px;
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 18px;
     line-height: calc(26.68 / 18);
+    padding: 4.8vw 6.5vw;
     width: 220px;
   }
   .main-title {
