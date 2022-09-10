@@ -1285,6 +1285,9 @@ a {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      .hidden-title{
+        display: none;
+      }
     }
     .waterway-title {
       font-size: 2.813vw;

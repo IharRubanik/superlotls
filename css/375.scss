@@ -8,7 +8,6 @@
     }
   }
 
-
   @keyframes main-button375 {
     0% {
       margin-top: 0vw;
@@ -310,7 +309,7 @@
         align-items: flex-start;
         width: 100%;
 
-        #c1{
+        #c1 {
           width: 100%;
           height: 103%;
         }
@@ -463,21 +462,20 @@
   #waterway {
     height: auto;
     width: 100vw;
-    background-image: url('/img/waterway/waterway-bg-mob.png');
+    background-image: url("/img/waterway/waterway-bg-mob.png");
     background-size: cover;
-    background-position: top center;
+    background-position: center -25px;
     background-repeat: no-repeat;
     #waterway-bg {
       z-index: 1;
       display: none;
     }
     #waterway-blur {
-      border: 1px solid red;
       z-index: 999;
       width: 100%;
-      height: 100px;
-      opacity: 1!important;
-      bottom: -20px;
+      height: 284px;
+      opacity: 1 !important;
+      bottom: 0px;
     }
     .container {
       flex-direction: column;
@@ -490,10 +488,10 @@
       height: auto;
       position: relative;
       z-index: 9;
-      padding: 200px 0 0 0;
+      padding: 145px 0 0 0;
       &::before,
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         background-repeat: no-repeat;
@@ -501,20 +499,21 @@
         z-index: -1;
       }
       &::before {
-        width: 230px;
-        height: 230px;
-        background-image: url('/img/waterway/bubble.png');
-        background-size: 225px auto;
-        top: 88px;
-        right: 0px;
+        width: 270px;
+        height: 270px;
+        background-image: url(/img/waterway/bubble.png);
+        background-size: 90%;
+        top: 11px;
+        right: -22px;
+        border: 1px red solid;
       }
       &::after {
-        width: 167px;
-        height: 167px;
-        background-image: url('/img/waterway/axolots.gif');
-        background-size: 167px auto;
-        top: 120px;
-        right: 20px;
+        width: 200px;
+        height: 200px;
+        background-image: url(/img/waterway/axolots.gif);
+        background-size: 200px auto;
+        top: 55px;
+        right: 13px;
       }
       #waterway-text-1,
       #waterway-text-2,
@@ -522,16 +521,19 @@
       #waterway-text-4 {
         height: auto;
         margin: 0 0 105px 0;
+        .hidden-title{
+          display: flex;
+        }
       }
       .hidden-title {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         font-size: 38px;
-        line-height: calc(58/38);
+        line-height: calc(58 / 38);
         font-family: "Wild World";
         font-weight: 500;
-        margin: 0 0 30px 0;
+        margin: 0px 0 35px 0;
         .waterway-maintitle {
           font-size: 16px;
           border-width: 0 1px;
@@ -541,12 +543,12 @@
       }
       .waterway-title {
         font-size: 34px;
-        line-height: calc(44/34);
+        line-height: calc(44 / 34);
       }
       ul {
         li {
           font-size: 18px;
-          line-height: calc(28/18);
+          line-height: calc(28 / 18);
           padding: 0 0 0 7.8vw;
           margin-top: 5px;
           &::before {
@@ -556,14 +558,18 @@
       }
       p {
         font-size: 20px;
-        line-height: calc(30/20);
+        line-height: calc(30 / 20);
         margin-top: 15px;
+        letter-spacing: -0.45px;
+        width: 100%;
       }
       a {
-        width: 27.6vw;
+        width: 24.6vw;
         height: 6.8vw;
         border-width: 1px;
         border-radius: 6px;
+        font-size: 20px;
+        line-height: 30px;
       }
     }
   }
@@ -625,7 +631,7 @@
 
   .waterway-maintitle {
     font-size: 20px;
-    padding: 5px 12px;
+    padding: 7px 12px;
     border-radius: 8px;
   }
 
@@ -670,7 +676,7 @@
     .faq {
       .main-title {
         font-size: 38px;
-        line-height: calc(58/38);
+        line-height: calc(58 / 38);
         margin: 0 0 10px 0;
       }
     }
@@ -678,7 +684,7 @@
 
   .accordion-title {
     font-size: 20px;
-    line-height: calc(30/20);
+    line-height: calc(30 / 20);
     padding: 17px 20px 17px 38px;
     &::before {
       width: 2px;
@@ -708,7 +714,7 @@
       margin: 0 0 5px 0;
       > span {
         font-size: 33px;
-        line-height: calc(49/33);
+        line-height: calc(49 / 33);
       }
     }
     .socials {
@@ -729,93 +735,97 @@
       margin: 0 0 26px 0;
       a {
         font-size: 12px;
-      gap: 14px;
-      .btn {
-        font-size: 18px;
-        gap: 12px;
-        padding: 19px 22px;
-        img {
-          margin: 0;
-          width: 20px;
+        gap: 14px;
+        .btn {
+          font-size: 18px;
+          gap: 12px;
+          padding: 19px 22px;
+          img {
+            margin: 0;
+            width: 20px;
+          }
+          &::before,
+          &::after {
+            width: 16px;
+          }
+          &::before {
+            left: 0;
+          }
+          &::after {
+            right: 0;
+          }
+          > span {
+            &:nth-child(1) {
+              display: none;
+            }
+          }
         }
-        &::before,
-        &::after {
-          width: 16px;
+      }
+      .terms {
+        gap: 40px;
+        a {
+          font-size: 14px;
         }
-        &::before {
-          left: 0;
-        }
-        &::after {
-          right: 0;
-        }
-        > span {
-          &:nth-child(1) {
-            display: none;
+      }
+      .powered {
+        a {
+          img {
+            width: 130px;
           }
         }
       }
     }
-    .terms {
-      gap: 40px;
-      a {
-        font-size: 14px;
-      }
+  }
+
+  #mint {
+    width: 100%;
+    height: 959px;
+    img.bg {
+      top: 0;
+      left: -3.25vw;
+      width: 125vw;
     }
-    .powered {
-      a {
-        img {
-          width: 130px;
+    .anime-circle {
+      top: auto;
+      bottom: 53.5vw;
+      left: -20.75vw;
+
+      width: 140vw;
+      .wrapper-circle {
+        .character {
+          width: 98.5vw;
         }
       }
     }
-  }
-}
-
-#mint {
-  img.bg {
-    top: -18.75vw;
-    left: -3.25vw;
-    width: 125vw;
-  }
-  .anime-circle {
-    top: auto;
-    bottom: 39.5vw;
-    left: -22.75vw;
-    width: 140vw;
-    .wrapper-circle {
-      .character {
-        width: 98.5vw;
-      }
+    .container {
+      height: 100%;
+      margin-top: auto;
+    }
+    .btn {
+      position: absolute;
+      bottom: 106px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: 18px;
+      line-height: calc(26.68 / 18);
+      padding: 4.8vw 6.5vw;
+      width: 220px;
+    }
+    .main-title {
+      font-size: 38px;
+      line-height: calc(58 / 38);
+      margin: 77px 0 27px 0;
+    }
+    .main-text {
+      font-size: 20px;
+      line-height: calc(30 / 20);
+      letter-spacing: -0.5px;
     }
   }
-  .container {
-    height: 100%;
-    margin-top: auto;
-  }
-  .btn {
-    position: absolute;
-    bottom: 90px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    font-size: 18px;
-    line-height: calc(26.68 / 18);
-    padding: 4.8vw 6.5vw;
-    width: 220px;
-  }
-  .main-title {
-    font-size: 38px;
-    line-height: calc(58 / 38);
-    margin: 0 0 20px 0;
-  }
-  .main-text {
-    font-size: 20px;
-    line-height: calc(30 / 20);
-  }
-}
 
-.footer {
-  .socials {
-    flex-direction: column;
+  .footer {
+    .socials {
+      flex-direction: column;
+    }
   }
-}
 }
