@@ -1,5 +1,4 @@
-@media only screen and (max-width:1280px) {
-
+@media only screen and (max-width: 1280px) {
   @keyframes water1024 {
     0% {
       transform: translateX(0);
@@ -86,7 +85,7 @@
           height: 3.906vw;
           font-size: 1.465vw;
           line-height: 2.148vw;
-          border-radius: 8px;
+          border-radius: 0.781vw;
           .left-blok,
           .right-block {
             width: 0.879vw;
@@ -96,7 +95,7 @@
             }
           }
           &:hover {
-            border-radius: 18px;
+            border-radius: 1.758vw;
           }
         }
       }
@@ -357,13 +356,6 @@
       }
     }
   }
-
-  /*---*/
-
-  .container {
-    width: 92vw;
-  }
-
   .btn {
     font-size: 1.758vw;
     width: 21.484vw;
@@ -377,6 +369,9 @@
     }
   }
 
+  #mintwaterway{
+    height: 6000px;
+  }
   #mint {
     padding: 0;
     img.bg {
@@ -389,19 +384,19 @@
     }
     .main-title {
       font-size: 4.688vw;
-      line-height: calc(68/48);
+      line-height: calc(68 / 48);
       margin: 0 0 3.906vw 0;
     }
     .main-text {
       font-size: 2.344vw;
-      line-height: calc(34/24);
+      line-height: calc(34 / 24);
       margin: 0 0 5.859vw 0;
     }
     .anime-circle {
       top: -1.953vw;
       left: 36.5vw;
       width: 67vw;
-      .wrapper-circle  {
+      .wrapper-circle {
         .character {
           width: 49.5vw;
         }
@@ -409,6 +404,36 @@
     }
   }
   #waterway {
+    &.first {
+      #waterway-bg {
+        width: 398.646vw;
+        left: 0;
+        top: -25.969vw;
+        min-height: 105%;
+      }
+    }
+    &.second {
+      #waterway-bg {
+        width: 500vw;
+        top: 0;
+        left: -107.479vw;
+      }
+    }
+    &.third {
+      #waterway-bg {
+        width: 192.5vw;
+        top: 0;
+        left: -51.771vw;
+      }
+    }
+    &.four {
+      #waterway-bg {
+        width: 219.479vw;
+        top: 0;
+        left: -118.958vw;
+        min-height: 116%;
+      }
+    }
     .waterway-tabs {
       width: 34vw;
       gap: 2.4vw;
@@ -423,19 +448,19 @@
       width: 34vw;
       .waterway-title {
         font-size: 4.102vw;
-        line-height: calc(52/42);
-        margin: 0 0 10px 0;
+        line-height: calc(52 / 42);
+        margin: 0 0 0.977vw 0;
       }
       p {
         font-size: 2.344vw;
-        line-height: calc(34/24);
-        margin-top: 10px;
+        line-height: calc(34 / 24);
+        margin-top: 0.977vw;
       }
       ul {
         li {
           font-size: 1.953vw;
-          line-height: calc(30/20);
-          margin-top: 10px;
+          line-height: calc(30 / 20);
+          margin-top: 0.977vw;
           padding: 0 0 0 2.8vw;
           &::before {
             width: 0.391vw;
@@ -450,14 +475,12 @@
       }
     }
     .waterway-buble {
-      top: auto;
-      bottom: 19.531vw;
+      top: 40vw;
       left: 17.09vw;
     }
     &.first {
       .waterway-buble {
-        top: auto;
-        bottom: 19.531vw;
+        top: 40vw;
         left: 17.09vw;
       }
     }
@@ -465,7 +488,7 @@
   .waterway-maintitle {
     font-size: 1.953vw;
     padding: 0.488vw 1.172vw;
-    margin: 6.836vw 0 0.586vw 0
+    margin: 6.836vw 0 0.586vw 0;
   }
 
   footer {
@@ -478,7 +501,7 @@
       height: 84.766vw;
       .main-title {
         font-size: 4.688vw;
-        line-height: calc(68/48);
+        line-height: calc(68 / 48);
       }
     }
   }
@@ -486,13 +509,13 @@
   .accordion-item {
     width: 44.141vw;
     &.show {
-      max-height: 350px!important;
+      max-height: 34.18vw !important;
     }
   }
 
   .accordion-title {
     font-size: 2.148vw;
-    line-height: calc(32/22);
+    line-height: calc(32 / 22);
     padding: 1.66vw 1.563vw 1.66vw 3.125vw;
     &::before {
       width: 0.195vw;
@@ -505,7 +528,7 @@
   }
   .accordion-content {
     font-size: 1.758vw;
-    line-height: calc(28/18);
+    line-height: calc(28 / 18);
   }
 
   .footer {
@@ -516,7 +539,7 @@
     .join-bot {
       > span {
         font-size: 9.18vw;
-        line-height: calc(139/94);
+        line-height: calc(139 / 94);
       }
       > img {
         width: 30.762vw;
@@ -528,7 +551,7 @@
       gap: 3.906vw;
       .btn {
         font-size: 1.758vw;
-        line-height: calc(26.7/18);
+        line-height: calc(26.7 / 18);
         img {
           width: 2.051vw;
         }
@@ -539,7 +562,7 @@
       margin: 0 0 2.734vw 0;
       a {
         font-size: 1.367vw;
-        line-height: calc(20/14);
+        line-height: calc(20 / 14);
       }
     }
     .powered {
@@ -550,5 +573,4 @@
       }
     }
   }
-
 }

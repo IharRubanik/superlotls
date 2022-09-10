@@ -442,10 +442,16 @@
       }
     }
     .waterway-buble {
-      bottom: 55vw;
-      left: 15vw;
+      bottom: 58vw;
+      left: 13vw;
     }
     &.first {
+      #waterway-bg {
+        width: 409.646vw;
+        left: 0;
+        top: 0;
+        min-height: 105%;
+      }
       .waterway-buble {
         top: auto;
         bottom: 55vw;

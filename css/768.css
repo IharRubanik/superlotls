@@ -436,8 +436,14 @@
     font-size: 24px;
   }
   #waterway .waterway-buble {
-    bottom: 55vw;
-    left: 15vw;
+    bottom: 58vw;
+    left: 13vw;
+  }
+  #waterway.first #waterway-bg {
+    width: 409.646vw;
+    left: 0;
+    top: 0;
+    min-height: 105%;
   }
   #waterway.first .waterway-buble {
     top: auto;

@@ -106,7 +106,7 @@
     height: 3.906vw;
     font-size: 1.465vw;
     line-height: 2.148vw;
-    border-radius: 8px;
+    border-radius: 0.781vw;
   }
   .main .header .header__right-block .header__button .left-blok,
 .main .header .header__right-block .header__button .right-block {
@@ -118,7 +118,7 @@
     height: 0.195vw;
   }
   .main .header .header__right-block .header__button:hover {
-    border-radius: 18px;
+    border-radius: 1.758vw;
   }
   .main .main__container {
     height: 100%;
@@ -367,10 +367,6 @@
     width: 3.906vw;
     height: 3.906vw;
   }
-  /*---*/
-  .container {
-    width: 92vw;
-  }
   .btn {
     font-size: 1.758vw;
     width: 21.484vw;
@@ -381,6 +377,9 @@
     width: 5.273vw;
     height: 1.563vw;
     background-size: 5.273vw auto;
+  }
+  #mintwaterway {
+    height: 6000px;
   }
   #mint {
     padding: 0;
@@ -411,6 +410,28 @@
   #mint .anime-circle .wrapper-circle .character {
     width: 49.5vw;
   }
+  #waterway.first #waterway-bg {
+    width: 398.646vw;
+    left: 0;
+    top: -25.969vw;
+    min-height: 105%;
+  }
+  #waterway.second #waterway-bg {
+    width: 500vw;
+    top: 0;
+    left: -107.479vw;
+  }
+  #waterway.third #waterway-bg {
+    width: 192.5vw;
+    top: 0;
+    left: -51.771vw;
+  }
+  #waterway.four #waterway-bg {
+    width: 219.479vw;
+    top: 0;
+    left: -118.958vw;
+    min-height: 116%;
+  }
   #waterway .waterway-tabs {
     width: 34vw;
     gap: 2.4vw;
@@ -427,17 +448,17 @@
   #waterway .waterway-texts .waterway-title {
     font-size: 4.102vw;
     line-height: 1.2380952381;
-    margin: 0 0 10px 0;
+    margin: 0 0 0.977vw 0;
   }
   #waterway .waterway-texts p {
     font-size: 2.344vw;
     line-height: 1.4166666667;
-    margin-top: 10px;
+    margin-top: 0.977vw;
   }
   #waterway .waterway-texts ul li {
     font-size: 1.953vw;
     line-height: 1.5;
-    margin-top: 10px;
+    margin-top: 0.977vw;
     padding: 0 0 0 2.8vw;
   }
   #waterway .waterway-texts ul li::before {
@@ -450,13 +471,11 @@
     height: 2.8vw;
   }
   #waterway .waterway-buble {
-    top: auto;
-    bottom: 19.531vw;
+    top: 40vw;
     left: 17.09vw;
   }
   #waterway.first .waterway-buble {
-    top: auto;
-    bottom: 19.531vw;
+    top: 40vw;
     left: 17.09vw;
   }
   .waterway-maintitle {
@@ -480,7 +499,7 @@
     width: 44.141vw;
   }
   .accordion-item.show {
-    max-height: 350px !important;
+    max-height: 34.18vw !important;
   }
   .accordion-title {
     font-size: 2.148vw;
