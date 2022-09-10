@@ -120,7 +120,6 @@
         a {
           border-radius: 0.661vw;
           padding: 0 0.488vw;
-          border: 0.098vw solid #ff66c4;
           width: auto;
           height: 2.93vw;
         }
@@ -137,8 +136,6 @@
             font-size: 1.953vw;
             line-height: 2.93vw;
             border-radius: 0.781vw;
-            border-left: 0.098vw solid #ff66c4;
-            border-right: 0.098vw solid #ff66c4;
             width: auto;
             padding: 0 1.27vw;
             height: 3.906vw;
@@ -414,23 +411,23 @@
     }
     &.second {
       #waterway-bg {
-        width: 500vw;
+        width: 468vw;
         top: 0;
         left: -107.479vw;
       }
     }
     &.third {
       #waterway-bg {
-        width: 192.5vw;
+        width: 360vw;
         top: 0;
-        left: -51.771vw;
+        left: -124vw;
       }
     }
     &.four {
       #waterway-bg {
-        width: 219.479vw;
-        top: 0;
-        left: -118.958vw;
+        width: 390vw;
+        top: -10vw;
+        left: -170.958vw;
         min-height: 116%;
       }
     }

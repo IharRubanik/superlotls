@@ -1,29 +1,10 @@
 @media only screen and (max-width: 860px) {
-  @-webkit-keyframes water1024 {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-2800px);
-    }
-  }
   @keyframes water1024 {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-2800px);
-    }
-  }
-  @-webkit-keyframes main-button768 {
-    0% {
-      margin-bottom: 0vw;
-    }
-    50% {
-      margin-bottom: 30px;
-    }
-    100% {
-      margin-bottom: 0vw;
     }
   }
   @keyframes main-button768 {
@@ -70,8 +51,7 @@
     background-size: 2800.005px 472.003px;
     width: 5600px;
     height: 472.003px;
-    -webkit-animation: 15s water1024 linear infinite;
-            animation: 15s water1024 linear infinite;
+    animation: 15s water1024 linear infinite;
   }
   .main .water-blur1 {
     height: 400px;
@@ -123,7 +103,6 @@
   .main .main__container .main-subtitle a {
     border-radius: 6.769px;
     padding: 0 4.997px;
-    border: 1.004px solid #ff66c4;
     height: 30.003px;
   }
   .main .main__container .populacion-container {
@@ -138,8 +117,6 @@
     font-size: 19.999px;
     line-height: 30.003px;
     border-radius: 7.997px;
-    border-left: 1.004px solid #ff66c4;
-    border-right: 1.004px solid #ff66c4;
     padding: 0 13.005px;
     height: 39.997px;
   }
@@ -156,8 +133,7 @@
     height: 179.999px;
     font-size: 18.002px;
     line-height: 27.003px;
-    -webkit-animation: main-button768 3s linear infinite;
-            animation: main-button768 3s linear infinite;
+    animation: main-button768 3s linear infinite;
   }
   .main .main__container .populacion-container .main-button img {
     bottom: 36.004px;
@@ -435,9 +411,22 @@
   #waterway .waterway-texts p {
     font-size: 24px;
   }
+  #waterway .waterway-texts a {
+    width: 16.6vw;
+    height: 4vw;
+    border-radius: 8px;
+  }
   #waterway .waterway-buble {
-    bottom: 58vw;
-    left: 13vw;
+    top: 70vw;
+    left: 15vw;
+    width: 40vw;
+    height: 40vw;
+  }
+  #waterway .waterway-buble .buble-container .buble {
+    width: 40vw;
+  }
+  #waterway .waterway-buble .buble-container .axolots {
+    width: 37vw;
   }
   #waterway.first #waterway-bg {
     width: 409.646vw;
@@ -446,9 +435,19 @@
     min-height: 105%;
   }
   #waterway.first .waterway-buble {
-    top: auto;
-    bottom: 55vw;
-    left: 15vw;
+    top: 70vw;
+  }
+  #waterway.second #waterway-bg {
+    width: 409.646vw;
+    min-height: 105%;
+  }
+  #waterway.third #waterway-bg {
+    width: 409.646vw;
+    min-height: 105%;
+  }
+  #waterway.four #waterway-bg {
+    width: 409.646vw;
+    min-height: 105%;
   }
   .waterway-maintitle {
     font-size: 20px;

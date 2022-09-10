@@ -96,7 +96,6 @@
         a {
           border-radius: 6.769px;
           padding: 0 4.997px;
-          border: 1.004px solid #ff66c4;
           height: 30.003px;
         }
       }
@@ -117,8 +116,6 @@
             width: 82px;
             height: 34px;
             border-radius: 7.997px;
-            border-left: 1.004px solid #ff66c4;
-            border-right: 1.004px solid #ff66c4;
             padding: 0 13.005px;
           }
         }
@@ -501,6 +498,7 @@
         background-size: 90%;
         top: 11px;
         right: -22px;
+        animation: 4s bubbles-waterway ease-in-out infinite;
       }
       &::after {
         width: 200px;
@@ -509,6 +507,7 @@
         background-size: 200px auto;
         top: 55px;
         right: 13px;
+        animation: 4s bubbles-waterway ease-in-out infinite;
       }
       #waterway-text-1,
       #waterway-text-2,
@@ -531,7 +530,6 @@
         margin: 0px 0 35px 0;
         .waterway-maintitle {
           font-size: 16px;
-          border-width: 0 1px;
           border-radius: 8px;
           padding: 5px 12px;
         }

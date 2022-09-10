@@ -104,7 +104,6 @@
         a {
           border-radius: 6.769px;
           padding: 0 4.997px;
-          border: 1.004px solid #ff66c4;
           height: 30.003px;
         }
       }
@@ -118,8 +117,6 @@
             font-size: 19.999px;
             line-height: 30.003px;
             border-radius: 7.997px;
-            border-left: 1.004px solid #ff66c4;
-            border-right: 1.004px solid #ff66c4;
             padding: 0 13.005px;
             height: 39.997px;
           }
@@ -440,10 +437,25 @@
       p {
         font-size: 24px;
       }
+      a {
+        width: 16.6vw;
+        height: 4vw;
+        border-radius: 8px;
+      }
     }
     .waterway-buble {
-      bottom: 58vw;
-      left: 13vw;
+      top: 70vw;
+      left: 15vw;
+      width: 40vw;
+      height: 40vw;
+      .buble-container {
+        .buble {
+          width: 40vw;
+        }
+        .axolots {
+          width: 37vw;
+        }
+      }
     }
     &.first {
       #waterway-bg {
@@ -453,9 +465,31 @@
         min-height: 105%;
       }
       .waterway-buble {
-        top: auto;
-        bottom: 55vw;
-        left: 15vw;
+        top: 70vw;
+      }
+    }
+    &.second {
+      #waterway-bg {
+        width: 409.646vw;
+        // left: 0;
+        // top: 0;
+        min-height: 105%;
+      }
+    }
+    &.third {
+      #waterway-bg {
+        width: 409.646vw;
+        // left: 0;
+        // top: 0;
+        min-height: 105%;
+      }
+    }
+    &.four {
+      #waterway-bg {
+        width: 409.646vw;
+        // left: 0;
+        // top: 0;
+        min-height: 105%;
       }
     }
   }

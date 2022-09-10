@@ -1,29 +1,10 @@
 @media only screen and (max-width: 600px) {
-  @-webkit-keyframes water1024 {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-1680px);
-    }
-  }
   @keyframes water1024 {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-1680px);
-    }
-  }
-  @-webkit-keyframes main-button375 {
-    0% {
-      margin-top: 0vw;
-    }
-    50% {
-      margin-top: 30px;
-    }
-    100% {
-      margin-top: 0vw;
     }
   }
   @keyframes main-button375 {
@@ -35,17 +16,6 @@
     }
     100% {
       margin-top: 0vw;
-    }
-  }
-  @-webkit-keyframes arrow375 {
-    0% {
-      margin-bottom: 1%;
-    }
-    50% {
-      margin-bottom: 0%;
-    }
-    100% {
-      margin-bottom: 1%;
     }
   }
   @keyframes arrow375 {
@@ -91,8 +61,7 @@
     background-size: 1680px 194px;
     bottom: auto;
     top: 395px;
-    -webkit-animation: 15s water1024 linear infinite;
-            animation: 15s water1024 linear infinite;
+    animation: 15s water1024 linear infinite;
   }
   .main .water-blur1 {
     top: 413px;
@@ -125,7 +94,6 @@
   .main .main__container .main-subtitle a {
     border-radius: 6.769px;
     padding: 0 4.997px;
-    border: 1.004px solid #ff66c4;
     height: 30.003px;
   }
   .main .main__container .populacion-container {
@@ -145,8 +113,6 @@
     width: 82px;
     height: 34px;
     border-radius: 7.997px;
-    border-left: 1.004px solid #ff66c4;
-    border-right: 1.004px solid #ff66c4;
     padding: 0 13.005px;
   }
   .main .main__container .populacion-container strong {
@@ -163,8 +129,7 @@
     height: 125px;
     font-size: 14px;
     line-height: 21px;
-    -webkit-animation: main-button375 3s linear infinite;
-            animation: main-button375 3s linear infinite;
+    animation: main-button375 3s linear infinite;
   }
   .main .main__container .populacion-container .main-button img {
     bottom: 17.004px;
@@ -235,8 +200,7 @@
     border-left: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     transform: rotate(135deg);
-    -webkit-animation: 1.5s arrow375 linear infinite;
-            animation: 1.5s arrow375 linear infinite;
+    animation: 1.5s arrow375 linear infinite;
   }
   .beginning .beginning__container .beginning__slider::after {
     left: 15px;
@@ -248,8 +212,7 @@
     width: 7.997px;
     border-left: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
-    -webkit-animation: 1.5s arrow375 linear infinite;
-            animation: 1.5s arrow375 linear infinite;
+    animation: 1.5s arrow375 linear infinite;
   }
   .beginning .beginning__container .beginning__slider .circl-background {
     width: 337px;
@@ -512,6 +475,7 @@
     background-size: 90%;
     top: 11px;
     right: -22px;
+    animation: 4s bubbles-waterway ease-in-out infinite;
   }
   #waterway .waterway-texts::after {
     width: 200px;
@@ -520,6 +484,7 @@
     background-size: 200px auto;
     top: 55px;
     right: 13px;
+    animation: 4s bubbles-waterway ease-in-out infinite;
   }
   #waterway .waterway-texts #waterway-text-1,
 #waterway .waterway-texts #waterway-text-2,
@@ -546,7 +511,6 @@
   }
   #waterway .waterway-texts .hidden-title .waterway-maintitle {
     font-size: 16px;
-    border-width: 0 1px;
     border-radius: 8px;
     padding: 5px 12px;
   }
