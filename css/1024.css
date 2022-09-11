@@ -1,29 +1,10 @@
 @media only screen and (max-width: 1280px) {
-  @-webkit-keyframes water1024 {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-273.438vw);
-    }
-  }
   @keyframes water1024 {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-273.438vw);
-    }
-  }
-  @-webkit-keyframes main-button1024 {
-    0% {
-      margin-bottom: 0vw;
-    }
-    50% {
-      margin-bottom: 2.93vw;
-    }
-    100% {
-      margin-bottom: 0vw;
     }
   }
   @keyframes main-button1024 {
@@ -76,8 +57,7 @@
     background-position: top;
     width: 546.875vw;
     height: 46.094vw;
-    -webkit-animation: 15s water1024 linear infinite;
-            animation: 15s water1024 linear infinite;
+    animation: 15s water1024 linear infinite;
   }
   .main .water-blur1 {
     bottom: 0;
@@ -179,8 +159,7 @@
     height: 17.578vw;
     font-size: 1.758vw;
     line-height: 2.637vw;
-    -webkit-animation: main-button1024 3s linear infinite;
-            animation: main-button1024 3s linear infinite;
+    animation: main-button1024 3s linear infinite;
   }
   .main .main__container .populacion-container .main-button img {
     bottom: 3.516vw;
