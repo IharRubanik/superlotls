@@ -99,7 +99,7 @@
     line-height: 2.148vw;
   }
   .main .header .header__right-block .header__nav a:hover {
-    border-bottom: 0.098vw solid #ff66c4;
+    border-bottom: 1px solid #ff66c4;
   }
   .main .header .header__right-block .header__button {
     width: 14.16vw;
@@ -327,14 +327,14 @@
   .team .team__container .ridht-block .button-container .button {
     width: 6.445vw;
     height: 2.734vw;
-    border: 0.098vw solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 0.641vw;
   }
   .team .team__container .ridht-block .button-container .button.active {
-    border: 0.098vw solid #ffffff;
+    border: 1px solid #ffffff;
   }
   .team .team__container .ridht-block .button-container .button:hover {
-    border: 0.098vw solid #ff66c4;
+    border: 1px solid #ff66c4;
   }
   .team .team__container .ridht-block .button-container .button img {
     width: 4.512vw;
@@ -408,7 +408,7 @@
     width: 49.5vw;
   }
   #waterway.first #waterway-bg {
-    width: 398.646vw;
+    width: 426.646vw;
     left: 0;
     top: -25.969vw;
     min-height: 105%;
