@@ -459,6 +459,7 @@
     position: relative;
     z-index: 9;
     padding: 145px 0 0 0;
+    overflow: hidden;
   }
   #waterway .waterway-texts::before, #waterway .waterway-texts::after {
     content: "";

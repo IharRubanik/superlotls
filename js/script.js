@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
  const mediaQuery = window.matchMedia('only screen and (max-width: 600px)');
   // scroll
-  // const smoothLinks = document.querySelectorAll('a[href^="#"]');
-  // for (let smoothLink of smoothLinks) {
-  //   smoothLink.addEventListener("click", function (e) {
-  //     e.preventDefault();
-  //     const id = smoothLink.getAttribute("href");
-  //     document.querySelector(id).scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "start",
-  //     });
-  //   });
-  // }
+  const smoothLinks = document.querySelectorAll('.smooth-scroll');
+  for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const id = smoothLink.getAttribute("href");
+      document.querySelector(id).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
 
   // const letsSwim = document.querySelector('.main-button'); 
   // letsSwim.addEventListener('click', function(e) {
@@ -22,25 +22,23 @@ document.addEventListener("DOMContentLoaded", function() {
   //   })
   // })
 
-
   const letsSwim = document.querySelector('.main-button');
   let elemScroll;
   
-  if (mediaQuery.matches) {
-    letsSwim.href = ('#beginning__right-block');
-    elemScroll = document.querySelector('#beginning__right-block')
-  }
-  else{
-    letsSwim.href = ('#beginning');
-    elemScroll = document.querySelector('#beginning')
-  }
+  // if (mediaQuery.matches) {
+  //   letsSwim.href = ('#beginning__right-block');
+  //   elemScroll = document.querySelector('#beginning__right-block')
+  // }
+  // else{
+  //   letsSwim.href = ('#beginning');
+  //   elemScroll = document.querySelector('#beginning')
+  // }
   letsSwim.addEventListener('click', function(e) {
     e.preventDefault();
     window.scrollTo({
       top: elemScroll.offsetTop,
       behavior: "smooth",
     })
-
   })
  
 
