@@ -1,9 +1,28 @@
+@-webkit-keyframes water {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-213.333vw);
+  }
+}
 @keyframes water {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-213.333vw);
+  }
+}
+@-webkit-keyframes main-button {
+  0% {
+    margin-top: 12.76vw;
+  }
+  50% {
+    margin-top: 11.198vw;
+  }
+  100% {
+    margin-top: 12.76vw;
   }
 }
 @keyframes main-button {
@@ -17,6 +36,17 @@
     margin-top: 12.76vw;
   }
 }
+@-webkit-keyframes top-arrow {
+  0% {
+    top: -12%;
+  }
+  50% {
+    top: -11%;
+  }
+  100% {
+    top: -12%;
+  }
+}
 @keyframes top-arrow {
   0% {
     top: -12%;
@@ -26,6 +56,17 @@
   }
   100% {
     top: -12%;
+  }
+}
+@-webkit-keyframes left-arrow {
+  0% {
+    left: -6%;
+  }
+  50% {
+    left: -5%;
+  }
+  100% {
+    left: -6%;
   }
 }
 @keyframes left-arrow {
@@ -39,14 +80,16 @@
     left: -6%;
   }
 }
-@keyframes test {
+@-webkit-keyframes bubbles1 {
   0% {
-    transform: translateX(-50%);
-    left: 50%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.4;
   }
   100% {
-    transform: translateX(-50%);
-    left: 50%;
+    top: -10%;
+    opacity: 0.4;
   }
 }
 @keyframes bubbles1 {
@@ -61,12 +104,23 @@
     opacity: 0.4;
   }
 }
+@-webkit-keyframes bubbles-waterway {
+  0% {
+    margin: 0;
+  }
+  50% {
+    margin: -2% 0 0 0;
+  }
+  100% {
+    margin: 0;
+  }
+}
 @keyframes bubbles-waterway {
   0% {
     margin: 0;
   }
   50% {
-    margin: -2.292vw 0 0 0;
+    margin: -2% 0 0 0;
   }
   100% {
     margin: 0;
@@ -80,7 +134,6 @@
   outline-style: none;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
@@ -111,7 +164,8 @@ a {
 .main .main__background {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   left: 0;
   top: 0;
@@ -152,7 +206,8 @@ a {
   background-position: top;
   width: 426.667vw;
   height: 16.857vw;
-  animation: 20s water linear infinite;
+  -webkit-animation: 20s water linear infinite;
+          animation: 20s water linear infinite;
 }
 .main .water-blur1 {
   z-index: 3;
@@ -372,7 +427,8 @@ a {
   text-transform: uppercase;
   color: #07031f;
   transition: all 0.3s;
-  animation: main-button 3s linear infinite;
+  -webkit-animation: main-button 3s linear infinite;
+          animation: main-button 3s linear infinite;
   z-index: 20;
 }
 .main .main__container .populacion-container .main-button img {
@@ -414,6 +470,7 @@ a {
   width: 100%;
 }
 .beginning .beginning-wrapper {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -432,7 +489,8 @@ a {
 .beginning .beginning-wrapper .beginning-container .beginning-background {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -449,7 +507,8 @@ a {
   opacity: 0;
 }
 .beginning .bubbles1.active {
-  animation: 1.5s bubbles1 linear;
+  -webkit-animation: 1.5s bubbles1 linear;
+          animation: 1.5s bubbles1 linear;
 }
 .beginning .bubbles2 {
   position: absolute;
@@ -460,7 +519,8 @@ a {
   top: 60%;
 }
 .beginning .bubbles2.active {
-  animation: 1.5s bubbles1 linear;
+  -webkit-animation: 1.5s bubbles1 linear;
+          animation: 1.5s bubbles1 linear;
 }
 .beginning .bubbles3 {
   position: absolute;
@@ -471,7 +531,8 @@ a {
   top: 53%;
 }
 .beginning .bubbles3.active {
-  animation: 1.5s bubbles1 linear;
+  -webkit-animation: 1.5s bubbles1 linear;
+          animation: 1.5s bubbles1 linear;
 }
 .beginning .bubbles4 {
   position: absolute;
@@ -482,7 +543,8 @@ a {
   top: 70%;
 }
 .beginning .bubbles4.active {
-  animation: 2s bubbles1 linear;
+  -webkit-animation: 2s bubbles1 linear;
+          animation: 2s bubbles1 linear;
 }
 .beginning .beginning__container {
   position: relative;
@@ -507,7 +569,8 @@ a {
   border-left: 0.104vw solid #ffffff;
   border-bottom: 0.104vw solid #ffffff;
   transform: translateX(-50%) rotate(315deg);
-  animation: 1.5s top-arrow linear infinite;
+  -webkit-animation: 1.5s top-arrow linear infinite;
+          animation: 1.5s top-arrow linear infinite;
 }
 .beginning .beginning__container .beginning__slider::after {
   position: absolute;
@@ -519,7 +582,8 @@ a {
   border-left: 0.104vw solid #ffffff;
   border-bottom: 0.104vw solid #ffffff;
   transform: rotate(-136deg);
-  animation: 1.5s left-arrow linear infinite;
+  -webkit-animation: 1.5s left-arrow linear infinite;
+          animation: 1.5s left-arrow linear infinite;
 }
 .beginning .beginning__container .beginning__slider .circl-background {
   position: absolute;
@@ -651,7 +715,8 @@ a {
   position: absolute;
   left: 0;
   top: 0;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 100%;
   height: 100%;
   z-index: 0;
@@ -955,6 +1020,7 @@ a {
   height: 100vh;
   transition: 1s transform;
   background: steelblue;
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -1079,7 +1145,8 @@ a {
   z-index: -1;
   min-height: 100%;
   width: auto;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: all 1s;
 }
 #waterway #waterway-blur {
@@ -1101,7 +1168,8 @@ a {
   left: 32.292vw;
   transition: 1s all;
   z-index: -1;
-  animation: 4s bubbles-waterway ease-in-out infinite;
+  -webkit-animation: 4s bubbles-waterway ease-in-out infinite;
+          animation: 4s bubbles-waterway ease-in-out infinite;
 }
 #waterway .waterway-buble .buble-container {
   width: 100%;
@@ -1316,7 +1384,10 @@ a {
 .accordion-item {
   width: 34.375vw;
   border-bottom: 0.052vw solid rgba(255, 255, 255, 0.15);
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   overflow: hidden;
   max-height: 3.646vw;
   transition: 0.3s max-height, 0.3s border-color;
@@ -1390,7 +1461,8 @@ footer .footer-background {
   left: 0;
   bottom: 0vw;
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: auto;
 }
 footer .footer-light {
@@ -1398,7 +1470,8 @@ footer .footer-light {
   left: 18.75vw;
   top: -2.604vw;
   width: 104.844vw;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: auto;
 }
 footer .faq {
