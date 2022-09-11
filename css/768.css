@@ -1,10 +1,29 @@
 @media only screen and (max-width: 860px) {
+  @-webkit-keyframes water1024 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2800px);
+    }
+  }
   @keyframes water1024 {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-2800px);
+    }
+  }
+  @-webkit-keyframes main-button768 {
+    0% {
+      margin-bottom: 0vw;
+    }
+    50% {
+      margin-bottom: 30px;
+    }
+    100% {
+      margin-bottom: 0vw;
     }
   }
   @keyframes main-button768 {
@@ -51,7 +70,8 @@
     background-size: 2800.005px 472.003px;
     width: 5600px;
     height: 472.003px;
-    animation: 15s water1024 linear infinite;
+    -webkit-animation: 15s water1024 linear infinite;
+            animation: 15s water1024 linear infinite;
   }
   .main .water-blur1 {
     height: 400px;
@@ -133,7 +153,8 @@
     height: 179.999px;
     font-size: 18.002px;
     line-height: 27.003px;
-    animation: main-button768 3s linear infinite;
+    -webkit-animation: main-button768 3s linear infinite;
+            animation: main-button768 3s linear infinite;
   }
   .main .main__container .populacion-container .main-button img {
     bottom: 36.004px;
@@ -441,7 +462,7 @@
   #waterway.second #waterway-bg {
     width: 540.646vw;
     left: -99vw;
-    top: -6vw;
+    top: 0;
     min-height: 105%;
   }
   #waterway.second .waterway-buble {
@@ -460,7 +481,7 @@
   }
   #waterway.four #waterway-bg {
     width: 490.646vw;
-    left: -230vw;
+    left: -255vw;
     top: -10vw;
     min-height: 105%;
   }
