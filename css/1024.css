@@ -1,10 +1,29 @@
 @media only screen and (max-width: 1280px) {
+  @-webkit-keyframes water1024 {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-273.438vw);
+    }
+  }
   @keyframes water1024 {
     0% {
       transform: translateX(0);
     }
     100% {
       transform: translateX(-273.438vw);
+    }
+  }
+  @-webkit-keyframes main-button1024 {
+    0% {
+      margin-bottom: 0vw;
+    }
+    50% {
+      margin-bottom: 2.93vw;
+    }
+    100% {
+      margin-bottom: 0vw;
     }
   }
   @keyframes main-button1024 {
@@ -57,7 +76,8 @@
     background-position: top;
     width: 546.875vw;
     height: 46.094vw;
-    animation: 15s water1024 linear infinite;
+    -webkit-animation: 15s water1024 linear infinite;
+            animation: 15s water1024 linear infinite;
   }
   .main .water-blur1 {
     bottom: 0;
@@ -79,7 +99,7 @@
     line-height: 2.148vw;
   }
   .main .header .header__right-block .header__nav a:hover {
-    border-bottom: 0.098vw solid #ff66c4;
+    border-bottom: 1px solid #ff66c4;
   }
   .main .header .header__right-block .header__button {
     width: 14.16vw;
@@ -159,7 +179,8 @@
     height: 17.578vw;
     font-size: 1.758vw;
     line-height: 2.637vw;
-    animation: main-button1024 3s linear infinite;
+    -webkit-animation: main-button1024 3s linear infinite;
+            animation: main-button1024 3s linear infinite;
   }
   .main .main__container .populacion-container .main-button img {
     bottom: 3.516vw;
@@ -306,14 +327,14 @@
   .team .team__container .ridht-block .button-container .button {
     width: 6.445vw;
     height: 2.734vw;
-    border: 0.098vw solid #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 0.641vw;
   }
   .team .team__container .ridht-block .button-container .button.active {
-    border: 0.098vw solid #ffffff;
+    border: 1px solid #ffffff;
   }
   .team .team__container .ridht-block .button-container .button:hover {
-    border: 0.098vw solid #ff66c4;
+    border: 1px solid #ff66c4;
   }
   .team .team__container .ridht-block .button-container .button img {
     width: 4.512vw;
@@ -387,7 +408,7 @@
     width: 49.5vw;
   }
   #waterway.first #waterway-bg {
-    width: 398.646vw;
+    width: 426.646vw;
     left: 0;
     top: -25.969vw;
     min-height: 105%;
@@ -405,7 +426,7 @@
   #waterway.four #waterway-bg {
     width: 390vw;
     top: -10vw;
-    left: -170.958vw;
+    left: -220.958vw;
     min-height: 116%;
   }
   #waterway .waterway-tabs {

@@ -76,7 +76,7 @@
             font-size: 1.465vw;
             line-height: 2.148vw;
             &:hover {
-              border-bottom: 0.098vw solid #ff66c4;
+              border-bottom: 1px solid #ff66c4;
             }
           }
         }
@@ -312,13 +312,13 @@
           .button {
             width: 6.445vw;
             height: 2.734vw;
-            border: 0.098vw solid #ffffff;
+            border: 1px solid #ffffff;
             border-radius: 0.641vw;
             &.active {
-              border: 0.098vw solid #ffffff;
+              border: 1px solid #ffffff;
             }
             &:hover {
-              border: 0.098vw solid #ff66c4;
+              border: 1px solid #ff66c4;
             }
             img {
               width: 4.512vw;
@@ -403,7 +403,7 @@
   #waterway {
     &.first {
       #waterway-bg {
-        width: 398.646vw;
+        width: 426.646vw;
         left: 0;
         top: -25.969vw;
         min-height: 105%;
@@ -427,7 +427,7 @@
       #waterway-bg {
         width: 390vw;
         top: -10vw;
-        left: -170.958vw;
+        left: -220.958vw;
         min-height: 116%;
       }
     }
